@@ -58,7 +58,7 @@ mycrawler 的 github 地址：[https://github.com/yrj2011/mycrawler.git)
     "retryTimes": 3,
     "sleepTime": 500
   },
-  "base_dir": "/Users/brian/todo/data/zhihu/"
+  "base_dir": ""
 }
 ```
 

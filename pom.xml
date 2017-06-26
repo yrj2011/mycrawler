@@ -61,10 +61,11 @@
     </licenses>
 
     <modules>
+     	<module>mycrawler-common</module>
+        <module>mycrawler-service</module>
         <module>mycrawler-core</module>
         <module>mycrawler-collector-zhihu</module>
         <module>mycrawler-data-elasticsearch</module>
-        <module>mycrawler-common</module>
     </modules>
 
     <dependencyManagement>
