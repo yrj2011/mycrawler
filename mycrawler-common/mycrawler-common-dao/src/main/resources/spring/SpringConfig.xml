@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/context 
+     http://www.springframework.org/schema/context/spring-context-4.3.xsd
+     http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+     http://www.springframework.org/schema/jdbc 
+     http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+     http://www.springframework.org/schema/tx 
+     http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<bean id="myPropertyConfigurer"
+		class="com.mycrawler.common.utils.PropertyPlaceHolderConfigurer">
+		 <property name="order" value="1" />
+		 <property name="ignoreUnresolvablePlaceholders" value="true" /> 
+		 <property name="enableDevMode" value="true" />     
+		<property name="propertyFiles">
+			<list>
+				<value>setting.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id = "dataSource" class = "com.alibaba.druid.pool.DruidDataSource" destroy-method = "close" >
+       <!-- 数据库基本信息配置 -->  
+       <property name = "url" value = "${mysql_conn_url}" />    
+       <property name = "username" value = "${mysql_conn_user}" />    
+       <property name = "password" value = "${mysql_conn_pwd}" />    
+       <property name = "driverClassName" value = "${mysql_conn_driver}" />    
+       <property name = "filters" value = "stat" />    
+        <!-- 最大并发连接数 -->  
+       <property name = "maxActive" value = "${db_conn_pool_maxActive}" />  
+       <!-- 初始化连接数量 -->  
+       <property name = "initialSize" value = "${db_conn_pool_initialSize}" />  
+       <!-- 配置获取连接等待超时的时间 -->  
+       <property name = "maxWait" value = "${db_conn_pool_maxWait}" />  
+       <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->  
+       <property name = "timeBetweenEvictionRunsMillis" value ="${db_conn_pool_timeBetweenEvictionRunsMillis}" />  
+       <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->  
+       <property name = "minEvictableIdleTimeMillis" value ="${db_conn_pool_minEvictableIdleTimeMillis}" />    
+       <property name = "validationQuery" value = "${db_conn_pool_validationQuery}" />    
+       <property name = "testWhileIdle" value = "${db_conn_pool_testWhileIdle}" />    
+       <property name = "testOnBorrow" value = "${db_conn_pool_testOnBorrow}" />    
+       <property name = "testOnReturn" value = "${db_conn_pool_testOnReturn}" />    
+       <property name = "maxOpenPreparedStatements" value ="${db_conn_pool_maxOpenPreparedStatements}" />  
+       <!-- 打开 removeAbandoned 功能 -->  
+       <property name = "removeAbandoned" value = "${db_conn_pool_removeAbandoned}" />  
+       <!-- 1800 秒，也就是 30 分钟 -->  
+       <property name = "removeAbandonedTimeout" value ="${db_conn_pool_removeAbandonedTimeout}" />  
+       <!-- 关闭 abanded 连接时输出错误日志 -->     
+       <property name = "logAbandoned" value = "${db_conn_pool_logAbandoned}" />  
+     </bean>
+
+	<!-- transaction manager, use JtaTransactionManager for global tx -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- enable transaction demarcation with annotations -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="autoSqlInjector" class="com.baomidou.mybatisplus.mapper.AutoSqlInjector"></bean>
+	<!-- 定义 MP 全局策略 -->
+	<bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
+	    <property name="idType" value="0" />
+	    <property name="dbType" value="mysql" />
+	    <!-- 全局表为下划线命名设置 true -->
+	    <property name="dbColumnUnderline" value="false" />
+	    <property name="sqlInjector" ref="autoSqlInjector"/>
+	</bean>
+	<!-- define the SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath*:mybatis/**/*Mapper.xml" />
+		<property name="configLocation" value="classpath:mybatis/MyBatisConfig.xml" />
+		<!-- typeAliasesPackage doesn't work in Eclipse RCP application, so have to define explicit typeAlias in the mybatis config xml ... -->
+<!-- 		<property name="typeAliasesPackage" value="com.kc.walle.common.domain" /> -->
+          <!-- 插件配置 -->
+	    <property name="plugins">
+	        <array>
+	            <!-- 分页插件配置 -->
+	            <bean id="paginationInterceptor" class="com.baomidou.mybatisplus.plugins.PaginationInterceptor">
+	                <!-- 指定数据库方言 -->
+	                <property name="dialectType" value="mysql"/>
+	            </bean>
+	            <!-- 如需要开启其他插件，可配置于此 -->
+	        </array>
+	    </property>
+	    <property name="globalConfig" ref="globalConfig" />
+	</bean>
+
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.mycrawler.common.dao" />
+	</bean>
+	
+</beans>

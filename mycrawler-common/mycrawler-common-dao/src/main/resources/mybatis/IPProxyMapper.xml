@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mycrawler.common.dao.IPProxyMapper">
+<!-- 
+	<select id="selectAllAgent" resultType="Agent">
+		select * from walle_core.agents where 1=1
+	</select>
+
+	<select id="selectOneById" parameterType="Integer" resultType="Agent">
+		select * from walle_core.agents where agentID = #{agentID,jdbcType=INTEGER} limit 1
+	</select>
+	<select id="selectOneByIP" parameterType="String" resultType="Agent">
+		select * from walle_core.agents where ip = #{ip,jdbcType=VARCHAR} limit 1
+	</select>
+	<delete id="deleteById" parameterType="Integer">
+		delete * from walle_core.agents where agentID = #{agentID,jdbcType=INTEGER}
+	</delete> -->
+	
+	<!-- <update id="updateOne" parameterType="Agent">
+		update walle_core.agents set 
+		agentType = #{agentType,jdbcType=VARCHAR},
+		ip = #{ip,jdbcType=VARCHAR}, 
+		state = #{state,jdbcType=VARCHAR},
+		operationLog = #{operationLog,jdbcType=VARCHAR},
+		currentVersion = #{currentVersion,jdbcType=VARCHAR}, 
+		runtime = #{runtime, jdbcType=TIMESTAMP},
+		createdApp = #{createdApp,jdbcType=VARCHAR},
+		createdUser = #{createdUser,jdbcType=VARCHAR},
+		createdDate = #{createdDate,jdbcType=TIMESTAMP},
+		lastUpdatedApp = #{lastUpdatedApp,jdbcType=VARCHAR},
+		lastUpdatedUser = #{lastUpdatedUser,jdbcType=VARCHAR},
+		lastUpdatedDate = #{lastUpdatedDate,jdbcType=TIMESTAMP}
+		where agentID = #{agentID,jdbcType=INTEGER}
+	</update> -->
+	
+	<insert id="insert" parameterType="IPProxy" useGeneratedKeys="true" keyColumn="id">
+		insert into mycrawler.ipproxy (ip, port, type, 
+		available,createdApp,createdUser , 
+		lastUpdatedApp,lastUpdatedUser)
+		values (
+		#{ip,jdbcType=INTEGER},
+		#{port,jdbcType=VARCHAR},
+		#{type,jdbcType=VARCHAR},
+		#{available,jdbcType=INTEGER},
+		#{createdApp,jdbcType=VARCHAR},
+		#{createdUser,jdbcType=VARCHAR},
+		#{lastUpdatedApp,jdbcType=VARCHAR},
+		#{lastUpdatedUser,jdbcType=VARCHAR})
+	</insert>
+	
+	
+</mapper>

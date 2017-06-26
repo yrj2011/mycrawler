@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="mylog" packages="com.mycrawler">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}	%p	%t	%c{1}:%L	%m%n" />
+    </Console>
+    <RollingRandomAccessFile name="file-log" fileName="logs/log.log" immediateFlush="true" 
+		filePattern="logs/log.log.%d{yyyy-MM-dd}-%i.gz">
+		<PatternLayout>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}	%p	%t	%c{1}:%L	%m%n</pattern>
+		</PatternLayout>
+		<Policies>
+			<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+			<SizeBasedTriggeringPolicy size="500 MB" />
+		</Policies>
+		<DefaultRolloverStrategy max="1000"/>
+	</RollingRandomAccessFile>
+  </Appenders>
+  <Loggers>
+     <Root level="debug">
+         <AppenderRef ref="Console" />
+     </Root>
+
+     <Logger name="org.springframework" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="file-log" />
+	 </Logger>
+
+     <Logger name="com.mycrawler" level="debug" additivity="false">
+         <AppenderRef ref="file-log" />
+         <AppenderRef ref="Console" />
+	 </Logger>
+  </Loggers>
+</Configuration>
+
