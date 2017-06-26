@@ -12,6 +12,8 @@
   <url>http://maven.apache.org</url>
   <packaging>pom</packaging>
   <modules>
+  		<module>mycrawler-service-das</module>
+  		<module>mycrawler-service-das-impl</module>
   </modules>
   <dependencies>
 		<dependency>
@@ -82,6 +84,25 @@
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
 		</dependency>
-		 
+		 <dependency>
+	        <groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-domain</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-dao</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-utils</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	     <dependency>
+	        <groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-exception</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
   </dependencies>
 </project>
