@@ -6,8 +6,8 @@
     <artifactId>mycrawler-service</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>mycrawler-service-das-impl</artifactId>
-  <name>mycrawler-service-das-impl</name>
+  <artifactId>mycrawler-service-impl</artifactId>
+  <name>mycrawler-service-impl</name>
   <packaging>jar</packaging>
   <url>http://maven.apache.org</url>
   <properties>
@@ -89,7 +89,7 @@
 </dependency>
     <dependency>
         <groupId>com.github.yrj</groupId>
-        <artifactId>mycrawler-service-das</artifactId>
+        <artifactId>mycrawler-service-api</artifactId>
         <version>${project.version}</version>
     </dependency>
   </dependencies>

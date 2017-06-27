@@ -25,15 +25,6 @@ public class ServiceTest {
 	public void before(){
 		try {
 			LoggerUtils.init();
-			ClassLoader cl = ServiceTest.class.getClassLoader();
-			String path ="com/mycrawler/das/";
-			Enumeration<URL> resourceUrls = (cl != null ? cl.getResources(path) : ClassLoader.getSystemResources(path));
-			Set<Resource> result = new LinkedHashSet<Resource>(16);
-			while (resourceUrls.hasMoreElements()) {
-				URL url = resourceUrls.nextElement();
-				System.out.println(url);
-			}
-			System.out.println(resourceUrls);
 			serverCtx = new ClassPathXmlApplicationContext("spring/DasSpringConfig.xml");
 		} catch (Exception e) {
 			logger.error("",e);

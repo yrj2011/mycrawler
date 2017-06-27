@@ -7,8 +7,8 @@
     <artifactId>mycrawler-service</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>mycrawler-service-das</artifactId>
-  <name>mycrawler-service-das</name>
+  <artifactId>mycrawler-service-api</artifactId>
+  <name>mycrawler-service-api</name>
   <packaging>jar</packaging>
   <url>http://maven.apache.org</url>
   <properties>

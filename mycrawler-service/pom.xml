@@ -12,8 +12,8 @@
   <url>http://maven.apache.org</url>
   <packaging>pom</packaging>
   <modules>
-  		<module>mycrawler-service-das</module>
-  		<module>mycrawler-service-das-impl</module>
+  		<module>mycrawler-service-api</module>
+  		<module>mycrawler-service-impl</module>
   </modules>
   <dependencies>
 		<dependency>
