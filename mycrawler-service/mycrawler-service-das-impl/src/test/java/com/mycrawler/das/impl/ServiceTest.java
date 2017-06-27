@@ -19,7 +19,7 @@ public class ServiceTest {
 	public void before(){
 		try {
 			LoggerUtils.init();
-			serverCtx = new ClassPathXmlApplicationContext("spring/SpringConfig.xml");
+			serverCtx = new ClassPathXmlApplicationContext("spring/DasSpringConfig.xml");
 		} catch (Exception e) {
 			logger.error("",e);
 		}
