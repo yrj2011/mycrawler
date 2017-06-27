@@ -1,17 +1,5 @@
 package com.mycrawler.collector.zhihu.processor58;
 
-import com.google.common.collect.Sets;
-import com.mycrawler.collector.zhihu.ZhihuConfiguration;
-import com.mycrawler.util.FileHelper;
-import com.mycrawler.webporter.data.BaseAssembler;
-import com.mycrawler.webporter.data.DataProcessor;
-import com.mycrawler.webporter.data.FileRawInput;
-
-import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import us.codecraft.webmagic.selector.Json;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -23,6 +11,19 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.google.common.collect.Sets;
+import com.mycrawler.collector.zhihu.ZhihuConfiguration;
+import com.mycrawler.common.utils.FileHelper;
+import com.mycrawler.webporter.data.BaseAssembler;
+import com.mycrawler.webporter.data.DataProcessor;
+import com.mycrawler.webporter.data.FileRawInput;
+
+import us.codecraft.webmagic.selector.Json;
 
 /**
  * 从原始下载数据提取 url_token,用于生成用户url

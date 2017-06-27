@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
-import com.mycrawler.util.StringHelper;
+import com.mycrawler.common.utils.StringHelper;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;

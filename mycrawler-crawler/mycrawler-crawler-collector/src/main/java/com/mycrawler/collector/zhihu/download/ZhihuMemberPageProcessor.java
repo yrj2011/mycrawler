@@ -2,7 +2,7 @@ package com.mycrawler.collector.zhihu.download;
 
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
 import com.mycrawler.collector.zhihu.processor.MemberURLTokenGenerator;
-import com.mycrawler.util.StringHelper;
+import com.mycrawler.common.utils.StringHelper;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;

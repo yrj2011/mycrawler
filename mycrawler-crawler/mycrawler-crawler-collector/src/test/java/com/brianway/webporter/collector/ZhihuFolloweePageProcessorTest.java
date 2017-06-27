@@ -1,15 +1,16 @@
 package com.brianway.webporter.collector;
 
-import com.mycrawler.collector.zhihu.download.ZhihuFolloweePageProcessor;
-import com.mycrawler.util.FileHelper;
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.mycrawler.collector.zhihu.download.ZhihuFolloweePageProcessor;
+import com.mycrawler.common.utils.FileHelper;
+
 import us.codecraft.webmagic.selector.Json;
 import us.codecraft.webmagic.selector.JsonPathSelector;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by brian on 16/11/24.

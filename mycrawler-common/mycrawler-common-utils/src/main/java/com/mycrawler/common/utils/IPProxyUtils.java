@@ -1,4 +1,4 @@
-package com.mycrawler.util;
+package com.mycrawler.common.utils;
 
 import java.io.BufferedReader;
 /**

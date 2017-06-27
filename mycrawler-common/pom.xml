@@ -15,7 +15,7 @@
         <module>mycrawler-common-domain</module>
         <module>mycrawler-common-dao</module>
         <module>mycrawler-common-utils</module>
-         <module>mycrawler-common-exception</module>
+        <module>mycrawler-common-exception</module>
   </modules>
   <dependencies>
 		<dependency>
@@ -90,5 +90,14 @@
 			 <groupId>org.apache.commons</groupId>
 			 <artifactId>commons-lang3</artifactId>
 		</dependency>
+		<dependency>
+			    <groupId>org.apache.httpcomponents</groupId>
+			    <artifactId>httpclient</artifactId>
+		</dependency>
+		 <dependency>
+        	<groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-autotest-base</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
   </dependencies>
 </project>

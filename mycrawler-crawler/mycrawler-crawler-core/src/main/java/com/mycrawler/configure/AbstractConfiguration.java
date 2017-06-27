@@ -1,6 +1,6 @@
 package com.mycrawler.configure;
 
-import com.mycrawler.util.FileHelper;
+import com.mycrawler.common.utils.FileHelper;
 
 public abstract class AbstractConfiguration {
 

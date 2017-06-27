@@ -1,11 +1,11 @@
 package com.brianway.webporter.data;
 
-import com.brianway.webporter.BaseTest;
-import com.mycrawler.webporter.data.FileRawInput;
-import com.mycrawler.webporter.data.RawInput;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.github.yrj.autotest.base.BaseTest;
+import com.mycrawler.webporter.data.FileRawInput;
+import com.mycrawler.webporter.data.RawInput;
 
 public class FileRawInputTest extends BaseTest {
     @Test

@@ -64,6 +64,7 @@
      	<module>mycrawler-common</module>
         <module>mycrawler-service</module>
         <module>mycrawler-crawler</module>
+         <module>mycrawler-autotest</module>
     </modules>
 
     <dependencyManagement>

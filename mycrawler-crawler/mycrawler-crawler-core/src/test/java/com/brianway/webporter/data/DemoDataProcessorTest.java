@@ -1,13 +1,13 @@
 package com.brianway.webporter.data;
 
-import com.brianway.webporter.BaseTest;
-import com.mycrawler.webporter.data.DemoDataProcessor;
+import java.io.File;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.File;
-import java.util.List;
+import com.github.yrj.autotest.base.BaseTest;
+import com.mycrawler.webporter.data.DemoDataProcessor;
 
 public class DemoDataProcessorTest extends BaseTest {
 

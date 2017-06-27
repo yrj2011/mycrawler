@@ -1,9 +1,7 @@
-package com.brianway.webporter.util;
+package com.mycrawler.common.utils;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.mycrawler.util.StringHelper;
 
 /**
  * Created by brian on 17/5/9.

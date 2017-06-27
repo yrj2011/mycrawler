@@ -1,16 +1,15 @@
-package com.brianway.webporter.util;
-
-import com.brianway.webporter.BaseTest;
-import com.mycrawler.util.FileHelper;
-
-import org.apache.commons.lang3.StringUtils;
-import org.junit.Assert;
-import org.junit.Test;
+package com.mycrawler.common.utils;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.github.yrj.autotest.base.BaseTest;
 
 public class FileHelperTest extends BaseTest {
 

@@ -1,21 +1,22 @@
 package com.mycrawler.collector.zhihu.processor;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
+import com.mycrawler.common.utils.FileHelper;
 import com.mycrawler.data.elasticsearch.Document;
-import com.mycrawler.util.FileHelper;
 import com.mycrawler.webporter.data.BaseAssembler;
 import com.mycrawler.webporter.data.ConsoleOutpipeline;
 import com.mycrawler.webporter.data.DataProcessor;
 import com.mycrawler.webporter.data.FileRawInput;
 import com.mycrawler.webporter.data.HashSetDuplicateRemover;
 
-import org.apache.commons.lang3.StringUtils;
 import us.codecraft.webmagic.selector.Json;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * 从原始数据生成满足 Elasticsearch 格式的 json 数据

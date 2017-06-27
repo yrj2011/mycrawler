@@ -1,10 +1,11 @@
 package com.brianway.webporter.configure;
 
-import com.brianway.webporter.BaseTest;
-import com.mycrawler.configure.BasicConfiguration;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.github.yrj.autotest.base.BaseTest;
+import com.mycrawler.configure.BasicConfiguration;
+
 import us.codecraft.webmagic.Site;
 
 public class BasicConfigurationTest extends BaseTest {
