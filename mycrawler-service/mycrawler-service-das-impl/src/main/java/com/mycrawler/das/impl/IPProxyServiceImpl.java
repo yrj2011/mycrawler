@@ -20,8 +20,8 @@ public class IPProxyServiceImpl implements IIPProxyService{
 	public int insert(IPProxy ipproxy) {
 		if(Objects.isNull(ipproxy))
 			throw new MyRuntimeException();
-		ipproxyMapper.insert(ipproxy);
-		return 0;
+		return ipproxyMapper.insert(ipproxy);
+		
 	}
 
 }
