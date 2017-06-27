@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS `mycrawler`.`ipproxy` (
   `port` int NOT NULL,
   `type` VARCHAR(16)  NULL,
   `available` int(1) null  default 0,
+  `version` INT NOT NULL AUTO_INCREMENT,
   `createdUser` VARCHAR(30) NULL,
   `createdApp` VARCHAR(30) NULL,
   `createdDate` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
