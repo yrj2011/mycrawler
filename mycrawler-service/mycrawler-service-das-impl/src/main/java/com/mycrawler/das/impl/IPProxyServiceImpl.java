@@ -13,15 +13,16 @@ import com.mycrawler.das.IIPProxyService;
 
 @Service
 public class IPProxyServiceImpl implements IIPProxyService{
+	
 	@Autowired
 	private IPProxyMapper ipproxyMapper;
+	
 	@Override
 	@Transactional
 	public int insert(IPProxy ipproxy) {
 		if(Objects.isNull(ipproxy))
 			throw new MyRuntimeException();
 		return ipproxyMapper.insert(ipproxy);
-		
 	}
 
 }

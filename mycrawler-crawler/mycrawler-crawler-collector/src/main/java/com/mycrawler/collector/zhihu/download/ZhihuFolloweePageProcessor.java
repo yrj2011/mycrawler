@@ -1,5 +1,8 @@
 package com.mycrawler.collector.zhihu.download;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
 import com.mycrawler.util.StringHelper;
 
@@ -10,9 +13,6 @@ import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.scheduler.BloomFilterDuplicateRemover;
 import us.codecraft.webmagic.scheduler.FileCacheQueueScheduler;
 import us.codecraft.webmagic.selector.Json;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by brian on 16/11/24.
