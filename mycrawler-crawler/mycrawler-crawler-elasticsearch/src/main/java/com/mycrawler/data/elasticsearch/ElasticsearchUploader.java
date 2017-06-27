@@ -18,6 +18,8 @@ import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.mycrawler.common.domain.es.Document;
+
 /**
  * 
  *
@@ -76,9 +78,6 @@ public class ElasticsearchUploader {
     }
 
     public void upload(String index, String type, Document doc) {
-        /*bulkProcessor.add(new IndexRequest(index, type, doc.getId())
-                .source(doc.getContent()));*/
-        //System.out.println("id:"+doc.getId());
         client.prepareIndex(index, type, doc.getId()).setSource(doc.getContent()).execute();
     }
 

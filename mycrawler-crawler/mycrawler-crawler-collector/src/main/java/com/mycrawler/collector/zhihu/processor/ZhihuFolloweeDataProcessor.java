@@ -1,15 +1,16 @@
 package com.mycrawler.collector.zhihu.processor;
 
-import com.mycrawler.data.elasticsearch.Document;
-import com.mycrawler.webporter.data.DataProcessor;
-import com.mycrawler.webporter.data.HashSetDuplicateRemover;
-
-import org.apache.commons.lang3.StringUtils;
-import us.codecraft.webmagic.selector.Json;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+
+import com.mycrawler.common.domain.es.Document;
+import com.mycrawler.webporter.data.DataProcessor;
+import com.mycrawler.webporter.data.HashSetDuplicateRemover;
+
+import us.codecraft.webmagic.selector.Json;
 
 /**
  * 从原始数据生成满足 Elasticsearch 格式的 json 数据

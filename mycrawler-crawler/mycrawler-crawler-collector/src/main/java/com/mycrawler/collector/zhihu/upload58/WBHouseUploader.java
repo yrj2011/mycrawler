@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
 import com.mycrawler.collector.zhihu.processor58.WBDataProcessor;
-import com.mycrawler.data.elasticsearch.Document;
+import com.mycrawler.common.domain.es.Document;
 import com.mycrawler.webporter.data.BaseAssembler;
 import com.mycrawler.webporter.data.DataProcessor;
 import com.mycrawler.webporter.data.FileRawInput;

@@ -1,11 +1,11 @@
 package com.mycrawler.collector.zhihu.upload58;
 
-import com.mycrawler.data.elasticsearch.Document;
-import com.mycrawler.data.elasticsearch.ElasticsearchUploader;
-import com.mycrawler.webporter.data.OutPipeline;
-
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+
+import com.mycrawler.common.domain.es.Document;
+import com.mycrawler.data.elasticsearch.ElasticsearchUploader;
+import com.mycrawler.webporter.data.OutPipeline;
 
 public class WBElasticsearchUploader extends ElasticsearchUploader implements OutPipeline<Document>, AutoCloseable {
 

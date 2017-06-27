@@ -6,12 +6,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.swing.plaf.basic.BasicToolBarUI.DockingListener;
-
 import org.apache.commons.lang3.StringUtils;
 
-import com.alibaba.fastjson.JSONObject;
-import com.mycrawler.data.elasticsearch.Document;
+import com.mycrawler.common.domain.es.Document;
 import com.mycrawler.file.ReadFromFile;
 import com.mycrawler.webporter.data.DataProcessor;
 

@@ -25,6 +25,11 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
     </dependency>
+     <dependency>
+        <groupId>com.github.yrj</groupId>
+        <artifactId>mycrawler-common-domain</artifactId>
+        <version>${project.version}</version>
+    </dependency>
     <dependency>
         <groupId>com.github.yrj</groupId>
         <artifactId>mycrawler-common-utils</artifactId>

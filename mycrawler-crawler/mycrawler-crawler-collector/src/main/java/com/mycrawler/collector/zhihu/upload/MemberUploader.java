@@ -1,14 +1,14 @@
 package com.mycrawler.collector.zhihu.upload;
 
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
 import com.mycrawler.collector.zhihu.processor.ZhihuMemberDataProcessor;
-import com.mycrawler.data.elasticsearch.Document;
+import com.mycrawler.common.domain.es.Document;
 import com.mycrawler.webporter.data.BaseAssembler;
 import com.mycrawler.webporter.data.DataProcessor;
 import com.mycrawler.webporter.data.FileRawInput;
-
-import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 /**
  * step 3: 将用户数据导入 Elasticsearch

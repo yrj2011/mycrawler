@@ -1,4 +1,4 @@
-package com.mycrawler.data.elasticsearch;
+package com.mycrawler.common.domain.es;
 
 public class Document {
     protected String id;

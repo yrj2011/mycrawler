@@ -8,8 +8,8 @@ import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
+import com.mycrawler.common.domain.es.Document;
 import com.mycrawler.common.utils.FileHelper;
-import com.mycrawler.data.elasticsearch.Document;
 import com.mycrawler.webporter.data.BaseAssembler;
 import com.mycrawler.webporter.data.ConsoleOutpipeline;
 import com.mycrawler.webporter.data.DataProcessor;

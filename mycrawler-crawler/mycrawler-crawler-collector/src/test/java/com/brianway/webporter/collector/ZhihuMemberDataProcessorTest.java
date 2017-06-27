@@ -1,14 +1,14 @@
 package com.brianway.webporter.collector;
 
-import com.mycrawler.collector.zhihu.processor.ZhihuMemberDataProcessor;
-import com.mycrawler.data.elasticsearch.Document;
-import com.mycrawler.webporter.data.DataProcessor;
+import java.io.File;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.File;
-import java.util.List;
+import com.mycrawler.collector.zhihu.processor.ZhihuMemberDataProcessor;
+import com.mycrawler.common.domain.es.Document;
+import com.mycrawler.webporter.data.DataProcessor;
 
 public class ZhihuMemberDataProcessorTest {
     @Test
