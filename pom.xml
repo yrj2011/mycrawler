@@ -19,7 +19,7 @@
         <slf4j.version>1.7.21</slf4j.version> 
         <!-- <log4j2.version>2.4.1</log4j2.version>
 		<slf4j.version>1.7.12</slf4j.version> -->
-        <elasticsearch.version>5.0.1</elasticsearch.version>
+        <elasticsearch.version>5.4.0</elasticsearch.version>
         <guava.version>15.0</guava.version>
         <!-- plugin -->
         <plugin.surefire.version>2.20</plugin.surefire.version>
@@ -64,7 +64,8 @@
      	<module>mycrawler-common</module>
         <module>mycrawler-service</module>
         <module>mycrawler-crawler</module>
-         <module>mycrawler-autotest</module>
+        <module>mycrawler-autotest</module>
+        <module> elasticsearch-tourial</module>
     </modules>
 
     <dependencyManagement>
@@ -229,6 +230,7 @@
 	            <artifactId>fastjson</artifactId>
 	            <version>1.2.33</version>
 	        </dependency>
+	        
         </dependencies>
     </dependencyManagement>
 

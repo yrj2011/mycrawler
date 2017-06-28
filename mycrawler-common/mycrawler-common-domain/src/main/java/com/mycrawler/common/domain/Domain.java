@@ -27,4 +27,6 @@ public abstract class Domain implements Serializable {
 	protected String lastUpdatedApp;
 
 	protected Date lastUpdatedDate;
+	
+	protected int version;
 }
