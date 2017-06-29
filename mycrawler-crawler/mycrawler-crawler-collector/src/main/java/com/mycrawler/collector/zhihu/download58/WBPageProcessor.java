@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
 import com.mycrawler.collector.zhihu.download58area.WBAreaPipeline;
+import com.mycrawler.common.utils.ReadFromFile;
 import com.mycrawler.common.utils.StringHelper;
-import com.mycrawler.file.ReadFromFile;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;

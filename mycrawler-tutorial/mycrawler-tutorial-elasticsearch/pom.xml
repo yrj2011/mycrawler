@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.github.yrj</groupId>
-    <artifactId>mycrawler-parent</artifactId>
+    <artifactId>mycrawler-tutorial</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>elasticsearch-tourial</artifactId>
-  <name>elasticsearch-tourial</name>
+  <artifactId>mycrawler-tutorial-elasticsearch</artifactId>
+  <name>mycrawler-tutorial-elasticsearch</name>
   <url>http://maven.apache.org</url>
   <packaging>jar</packaging>
 
@@ -38,15 +38,14 @@
            <groupId>org.apache.logging.log4j</groupId>
            <artifactId>log4j-web</artifactId>
        </dependency>
-     <!-- adapter log4j -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-    <dependency>
-	    <groupId>org.elasticsearch.client</groupId>
-	    <artifactId>transport</artifactId>
-	    <version>5.4.0</version>
-	</dependency>
+	     <!-- adapter log4j -->
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	    </dependency>
+	    <dependency>
+		    <groupId>org.elasticsearch.client</groupId>
+		    <artifactId>transport</artifactId>
+		</dependency>
   </dependencies>
 </project>

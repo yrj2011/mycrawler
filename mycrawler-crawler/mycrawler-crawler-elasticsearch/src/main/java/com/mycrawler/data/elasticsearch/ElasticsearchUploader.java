@@ -8,6 +8,7 @@ import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
+import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
@@ -78,7 +79,12 @@ public class ElasticsearchUploader {
     }
 
     public void upload(String index, String type, Document doc) {
-        client.prepareIndex(index, type, doc.getId()).setSource(doc.getContent()).execute();
+        IndexResponse response = client.prepareIndex(index, type)
+		        .setSource(doc.getContent())
+		        .get();
+        logger.debug("id:"+response.getId());
+        logger.debug("index:"+response.getIndex());
+        logger.debug("type:"+response.getType());
     }
 
     public void awaitClose(long awaitTime, TimeUnit timeUnit) throws InterruptedException {

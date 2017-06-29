@@ -9,7 +9,7 @@ import java.util.UUID;
 import org.apache.commons.lang3.StringUtils;
 
 import com.mycrawler.common.domain.es.Document;
-import com.mycrawler.file.ReadFromFile;
+import com.mycrawler.common.utils.ReadFromFile;
 import com.mycrawler.webporter.data.DataProcessor;
 
 /**

@@ -12,7 +12,7 @@ import com.mycrawler.webporter.data.FileRawInput;
 
 public class WBHouseUploader {
     public static void upload() {
-        String index = "mywb";
+        String index = "mywb2";
         String type = "house";
         ZhihuConfiguration configuration = new ZhihuConfiguration();
 
