@@ -13,6 +13,7 @@
   
   <modules>
   	<module>mycrawler-tutorial-elasticsearch</module>
+  	<module>mycrawler-tutorial-activemq</module>
   </modules>
   <dependencies>
 		<dependency>
@@ -101,6 +102,11 @@
 	     <dependency>
 	        <groupId>com.github.yrj</groupId>
 	        <artifactId>mycrawler-common-exception</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	     <dependency>
+	        <groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-utils</artifactId>
 	        <version>${project.version}</version>
 	    </dependency>
   </dependencies>

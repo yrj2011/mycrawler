@@ -127,7 +127,6 @@ public class PropertiesLoader {
 		return props;
 	}
 
-	// enableDevMode - ����ģʽ��Ĭ�ϼ���.dev��β��properties�ļ�����������ڣ��ټ���ԭ�ļ�
 	public static File loadFile(String fileName, boolean enableDevMode) throws Exception {
 		return loadFile(fileName, "conf", enableDevMode);
 	}
