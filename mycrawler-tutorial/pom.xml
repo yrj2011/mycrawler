@@ -14,7 +14,7 @@
   <modules>
   	<module>mycrawler-tutorial-elasticsearch</module>
   	<module>mycrawler-tutorial-activemq</module>
-  	<module>mycrawler-trutorial-zookeeper</module>
+  	<module>mycrawler-tutorial-zookeeper</module>
   </modules>
   <dependencies>
 		<dependency>
