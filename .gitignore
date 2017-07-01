@@ -3,6 +3,8 @@
 /logs/
 .settings
 target
+bin
+/bin/
 logs
 .classpath  
 .project  
