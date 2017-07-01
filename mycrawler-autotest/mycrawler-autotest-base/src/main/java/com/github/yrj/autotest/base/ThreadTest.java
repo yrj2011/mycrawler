@@ -9,10 +9,10 @@ public class ThreadTest {
 		Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for (int i = 0; i < 10000; i++) {
+				for (int i = 0; i < 10; i++) {
 					System.out.println("thread is run");
 					try {
-						Thread.sleep(500);
+						Thread.sleep(50);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					};
@@ -21,7 +21,7 @@ public class ThreadTest {
 			}
 		});
 		thread.start();
-		Thread.sleep(10000);
+		Thread.sleep(100);
 		thread.interrupt();
 	}
 	
@@ -30,10 +30,10 @@ public class ThreadTest {
 		Thread thread = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for (int i = 0; i < 10000; i++) {
+				for (int i = 0; i < 10; i++) {
 					System.out.println(Thread.currentThread().getName()+ " is run 1");
 					try {
-						Thread.sleep(500);
+						Thread.sleep(50);
 						Thread.yield();
 						System.out.println(Thread.currentThread().getName()+ " is run 2");
 					} catch (InterruptedException e) {
@@ -48,10 +48,10 @@ public class ThreadTest {
 		Thread thread2 = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				for (int i = 0; i < 10000; i++) {
+				for (int i = 0; i < 10; i++) {
 					System.out.println(Thread.currentThread().getName()+ " is run");
 					try {
-						Thread.sleep(500);
+						Thread.sleep(50);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					};

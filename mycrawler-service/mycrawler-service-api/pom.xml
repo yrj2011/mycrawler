@@ -17,8 +17,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>com.github.yrj</groupId>
+      <artifactId>mycrawler-common-domain</artifactId>
     </dependency>
   </dependencies>
 </project>

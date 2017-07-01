@@ -15,82 +15,20 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-core</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-api</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-slf4j-impl</artifactId>
-    </dependency>
-
-    <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-web</artifactId>
-    </dependency>
-
-    <!-- adapter log4j -->
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>log4j-over-slf4j</artifactId>
-    </dependency>
-    <!-- adapter commons-logging -->
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>jcl-over-slf4j</artifactId>
-    </dependency>
-    <!-- log end -->
-        
- 	<dependency>
-	<groupId>org.projectlombok</groupId>
-	<artifactId>lombok</artifactId>
-</dependency>
-<dependency>
-	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-core</artifactId>
-</dependency>
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context</artifactId>
-</dependency>
-<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-jdbc</artifactId>
-</dependency> 
-<dependency>
-	<groupId>org.mybatis</groupId>
-	<artifactId>mybatis</artifactId>
-</dependency>
-<dependency>
-	<groupId>org.mybatis</groupId>
-	<artifactId>mybatis-spring</artifactId>
-</dependency>
-<!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
-<dependency>
-    <groupId>com.alibaba</groupId>
-    <artifactId>druid</artifactId>
-</dependency> 
-<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-</dependency>
+  
     <dependency>
         <groupId>com.github.yrj</groupId>
+        <artifactId>mycrawler-common-dao</artifactId>
+     </dependency>
+     
+      <dependency>
+        <groupId>com.github.yrj</groupId>
+        <artifactId>mycrawler-common-exception</artifactId>
+     </dependency>
+     
+     <dependency>
+        <groupId>com.github.yrj</groupId>
         <artifactId>mycrawler-service-api</artifactId>
-        <version>${project.version}</version>
-    </dependency>
+     </dependency>
   </dependencies>
 </project>

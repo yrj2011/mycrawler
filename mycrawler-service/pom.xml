@@ -84,25 +84,36 @@
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
 		</dependency>
-		 <dependency>
-	        <groupId>com.github.yrj</groupId>
-	        <artifactId>mycrawler-common-domain</artifactId>
-	        <version>${project.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>com.github.yrj</groupId>
-	        <artifactId>mycrawler-common-dao</artifactId>
-	        <version>${project.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>com.github.yrj</groupId>
-	        <artifactId>mycrawler-common-utils</artifactId>
-	        <version>${project.version}</version>
-	    </dependency>
-	     <dependency>
-	        <groupId>com.github.yrj</groupId>
-	        <artifactId>mycrawler-common-exception</artifactId>
-	        <version>${project.version}</version>
-	    </dependency>
+		
   </dependencies>
+  <dependencyManagement>
+  	  	<dependencies>
+	  	     <dependency>
+		        <groupId>com.github.yrj</groupId>
+		        <artifactId>mycrawler-common-domain</artifactId>
+		        <version>${project.version}</version>
+		    </dependency>
+		    <dependency>
+		        <groupId>com.github.yrj</groupId>
+		        <artifactId>mycrawler-common-dao</artifactId>
+		        <version>${project.version}</version>
+		    </dependency>
+		    <dependency>
+		        <groupId>com.github.yrj</groupId>
+		        <artifactId>mycrawler-common-utils</artifactId>
+		        <version>${project.version}</version>
+		    </dependency>
+		     <dependency>
+		        <groupId>com.github.yrj</groupId>
+		        <artifactId>mycrawler-common-exception</artifactId>
+		        <version>${project.version}</version>
+		    </dependency>
+		    
+		    <dependency>
+		        <groupId>com.github.yrj</groupId>
+		        <artifactId>mycrawler-service-api</artifactId>
+		        <version>${project.version}</version>
+		    </dependency>
+  	  </dependencies>
+  </dependencyManagement>
 </project>

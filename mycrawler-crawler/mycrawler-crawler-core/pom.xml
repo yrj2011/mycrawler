@@ -33,5 +33,10 @@
 	        <artifactId>mycrawler-common-utils</artifactId>
 	        <version>${project.version}</version>
         </dependency>
+        <dependency>
+	        <groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-autotest-base</artifactId>
+	        <version>${project.version}</version>
+        </dependency>
     </dependencies>
 </project>

@@ -18,6 +18,10 @@
         <module>mycrawler-common-exception</module>
   </modules>
   <dependencies>
+  		 <dependency>
+             <groupId>junit</groupId>
+             <artifactId>junit</artifactId>
+         </dependency>
 		<dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -40,12 +44,12 @@
             <artifactId>log4j-web</artifactId>
         </dependency>
 
-        <!-- adapter log4j -->
+       <!--  adapter log4j -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>log4j-over-slf4j</artifactId>
         </dependency>
-        <!-- adapter commons-logging -->
+      <!--   adapter commons-logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
@@ -94,10 +98,35 @@
 			    <groupId>org.apache.httpcomponents</groupId>
 			    <artifactId>httpclient</artifactId>
 		</dependency>
-		 <dependency>
+		
+  </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+ 		<dependency>
         	<groupId>com.github.yrj</groupId>
 	        <artifactId>mycrawler-autotest-base</artifactId>
 	        <version>${project.version}</version>
 	    </dependency>
-  </dependencies>
+	    <dependency>
+        	<groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-domain</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	    <dependency>
+        	<groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-exception</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	    <dependency>
+        	<groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-utils</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	     <dependency>
+        	<groupId>com.github.yrj</groupId>
+	        <artifactId>mycrawler-common-dao</artifactId>
+	        <version>${project.version}</version>
+	    </dependency>
+	   </dependencies>
+  </dependencyManagement>
 </project>

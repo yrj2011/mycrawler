@@ -51,7 +51,7 @@
         <developerConnection>scm:git:git@github.com:brianway/webporter.git</developerConnection>
         <url>git@github.com:brianway/webporter.git</url>
       <tag>HEAD</tag>
-  </scm>
+   </scm>
 
     <licenses>
         <license>
@@ -115,7 +115,6 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
@@ -152,7 +151,7 @@
 			<dependency>
 			    <groupId>org.apache.httpcomponents</groupId>
 			    <artifactId>httpclient</artifactId>
-			    <version>4.5.3</version>
+			    <version>4.4</version>
 			</dependency>
             <dependency>
 				<groupId>org.projectlombok</groupId>
@@ -214,11 +213,6 @@
                 <artifactId>mybatis-plus</artifactId>
                 <version>2.0.8</version>
             </dependency>
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus</artifactId>
-                <version>2.0.8</version>
-            </dependency>
            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 			<dependency>
 			    <groupId>org.apache.commons</groupId>
@@ -276,7 +270,7 @@
                     <!--</execution>-->
                 <!--</executions>-->
             <!--</plugin>-->
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>${plugin.resources.version}</version>
@@ -306,8 +300,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
+            </plugin> -->
+          <!--   <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${plugin.javadoc.version}</version>
@@ -331,8 +325,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
+            </plugin> -->
+           <!--  <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>${plugin.release.version}</version>
@@ -340,7 +334,7 @@
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                 </configuration>
-            </plugin>
+            </plugin> -->
         </plugins>
     </build>
 
@@ -362,7 +356,7 @@
             <build>
                 <plugins>
                     <!-- Source -->
-                    <plugin>
+                   <!--  <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
                         <version>${plugin.source.version}</version>
@@ -374,9 +368,9 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
+                    </plugin> -->
                     <!-- Javadoc -->
-                    <plugin>
+                   <!--  <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>${plugin.javadoc.version}</version>
@@ -388,9 +382,9 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
+                    </plugin> -->
                     <!-- GPG -->
-                    <plugin>
+                  <!--   <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>${plugin.gpg.version}</version>
@@ -402,8 +396,8 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
-                    <plugin>
+                    </plugin> -->
+                    <!-- <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
                         <version>1.6.7</version>
@@ -413,18 +407,18 @@
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
-                    </plugin>
+                    </plugin> -->
                 </plugins>
             </build>
             <distributionManagement>
-                <snapshotRepository>
+               <!--  <snapshotRepository>
                     <id>sonatype-nexus-snapshots</id>
                     <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
                 </snapshotRepository>
                 <repository>
                     <id>sonatype-nexus-staging</id>
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
+                </repository> -->
             </distributionManagement>
         </profile>
     </profiles>

@@ -63,28 +63,7 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-context</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-		</dependency> 
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
-		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>druid</artifactId>
-		</dependency> 
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-		<dependency>
-		    <groupId>mysql</groupId>
-		    <artifactId>mysql-connector-java</artifactId>
-		</dependency>
+		
 		 <dependency>
 	        <groupId>com.github.yrj</groupId>
 	        <artifactId>mycrawler-common-domain</artifactId>
@@ -103,11 +82,6 @@
 	     <dependency>
 	        <groupId>com.github.yrj</groupId>
 	        <artifactId>mycrawler-common-exception</artifactId>
-	        <version>${project.version}</version>
-	    </dependency>
-	     <dependency>
-	        <groupId>com.github.yrj</groupId>
-	        <artifactId>mycrawler-common-utils</artifactId>
 	        <version>${project.version}</version>
 	    </dependency>
   </dependencies>
