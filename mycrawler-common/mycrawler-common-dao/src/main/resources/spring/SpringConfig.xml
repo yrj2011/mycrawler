@@ -68,7 +68,13 @@
 	<bean id="autoSqlInjector" class="com.baomidou.mybatisplus.mapper.AutoSqlInjector"></bean>
 	<!-- 定义 MP 全局策略 -->
 	<bean id="globalConfig" class="com.baomidou.mybatisplus.entity.GlobalConfiguration">
-	    <property name="idType" value="0" />
+	  	<!-- 
+            AUTO->`0`("数据库ID自增")
+             INPUT->`1`(用户输入ID")
+            ID_WORKER->`2`("全局唯一ID")
+            UUID->`3`("全局唯一ID")
+        -->
+	    <property name="idType" value="1" />
 	    <property name="dbType" value="mysql" />
 	    <!-- 全局表为下划线命名设置 true -->
 	    <property name="dbColumnUnderline" value="false" />
