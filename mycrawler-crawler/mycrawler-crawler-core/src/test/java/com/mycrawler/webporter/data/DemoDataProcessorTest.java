@@ -1,4 +1,4 @@
-package com.brianway.webporter.data;
+package com.mycrawler.webporter.data;
 
 import java.io.File;
 import java.util.List;

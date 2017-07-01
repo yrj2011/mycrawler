@@ -1,4 +1,4 @@
-package com.brianway.webporter.configure;
+package com.mycrawler.webporter.configure;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.brianway.webporter.collector;
+package com.mycrawler.webporter.collector;
 
 import java.util.Arrays;
 import java.util.List;

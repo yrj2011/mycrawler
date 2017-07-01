@@ -1,4 +1,4 @@
-package com.brianway.webporter.collector;
+package com.mycrawler.webporter.collector;
 
 public class Main {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.brianway.webporter.collector;
+package com.mycrawler.webporter.collector;
 
 import org.junit.BeforeClass;
 

@@ -47,9 +47,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:brianway/webporter.git</connection>
-        <developerConnection>scm:git:git@github.com:brianway/webporter.git</developerConnection>
-        <url>git@github.com:brianway/webporter.git</url>
+        <connection>scm:git:git@github.com:yrj2011/mycrawler</connection>
+        <developerConnection>scm:git:git@github.com:yrj2011/mycrawler</developerConnection>
+        <url>git@github.com:yrj2011/mycrawler.git</url>
       <tag>HEAD</tag>
    </scm>
 
