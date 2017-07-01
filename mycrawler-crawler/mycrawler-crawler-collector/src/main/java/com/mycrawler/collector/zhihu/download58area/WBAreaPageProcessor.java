@@ -1,23 +1,19 @@
 package com.mycrawler.collector.zhihu.download58area;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.mycrawler.collector.zhihu.ZhihuConfiguration;
-import com.mycrawler.collector.zhihu.download58.WBPipeline;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;

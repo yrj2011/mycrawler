@@ -1,12 +1,12 @@
 package com.mycrawler.webporter.collector;
 
+import java.io.File;
+import java.util.Set;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 import com.mycrawler.collector.zhihu.processor.MemberURLTokenGenerator;
-
-import java.io.File;
-import java.util.Set;
 
 public class MemberURLTokenGeneratorTest extends BaseTest {
 
