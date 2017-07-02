@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xmlns:repository="http://www.springframework.org/schema/data/repository"
+       xsi:schemaLocation="http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/data/repository http://www.springframework.org/schema/data/repository/spring-repository-1.8.xsd">
+
+    <mongo:template db-factory-ref="mongoDbFactory" converter-ref="converters"/>
+
+    <mongo:db-factory id="mongoDbFactory" dbname="sandbox" mongo-ref="mongoClient"/>
+
+    <mongo:mongo-client id="mongoClient">
+        <mongo:client-options/>
+    </mongo:mongo-client>
+
+    <mongo:repositories base-package="com.spring.data"/>
+
+    <!--        Populating a json file        -->
+    <!--<repository:jackson2-populator locations="populate.js"/>-->
+    <mongo:mapping-converter id="converters">
+        <mongo:custom-converters>
+            <mongo:converter>
+                <bean class="com.spring.data.converters.AuthorToDbObjectConverter"/>
+            </mongo:converter>
+            <mongo:converter>
+                <bean class="com.spring.data.converters.DbObjectToAuthorConverter"/>
+            </mongo:converter>
+        </mongo:custom-converters>
+    </mongo:mapping-converter>
+</beans>

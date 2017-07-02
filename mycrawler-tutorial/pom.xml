@@ -16,6 +16,7 @@
   	<module>mycrawler-tutorial-activemq</module>
   	<module>mycrawler-tutorial-zookeeper</module>
   	<module>mycrawler-tutorial-mongo</module>
+	<module>mycrawler-tutorial-mongo2</module>
   </modules>
   <dependencies>
 		<dependency>
@@ -68,6 +69,20 @@
 		        <groupId>org.mongodb</groupId>
 		        <artifactId>mongodb-driver</artifactId>
 		 </dependency>
+		  <dependency>
+		        <groupId>org.springframework.data</groupId>
+		        <artifactId>spring-data-mongodb</artifactId>
+		 </dependency>
+		 <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.0.3.Final</version>
+        </dependency>
 		 <dependency>
 	        <groupId>com.mycrawler</groupId>
 	        <artifactId>mycrawler-common-domain</artifactId>
