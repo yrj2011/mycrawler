@@ -15,6 +15,7 @@
   	<module>mycrawler-tutorial-elasticsearch</module>
   	<module>mycrawler-tutorial-activemq</module>
   	<module>mycrawler-tutorial-zookeeper</module>
+  	<module>mycrawler-tutorial-mongo</module>
   </modules>
   <dependencies>
 		<dependency>
@@ -63,7 +64,10 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-context</artifactId>
 		</dependency>
-		
+		 <dependency>
+		        <groupId>org.mongodb</groupId>
+		        <artifactId>mongodb-driver</artifactId>
+		 </dependency>
 		 <dependency>
 	        <groupId>com.mycrawler</groupId>
 	        <artifactId>mycrawler-common-domain</artifactId>

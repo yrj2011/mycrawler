@@ -1,5 +1,10 @@
-package com.mycrawler.crawler.config;
+package com.mycrawler.crawler.config.impl;
 
+import org.springframework.stereotype.Component;
+
+import com.mycrawler.crawler.config.BasicConfiguration;
+
+@Component
 public class IPProxyConfiguration extends BasicConfiguration {
 
     public static final String SUBDIR_MEMBER = "member/";

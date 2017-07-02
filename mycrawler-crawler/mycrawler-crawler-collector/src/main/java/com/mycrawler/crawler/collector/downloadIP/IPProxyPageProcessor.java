@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.mycrawler.crawler.collector.ZhihuConfiguration;
+import com.mycrawler.crawler.config.impl.IPProxyConfiguration;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
@@ -115,7 +116,7 @@ public class IPProxyPageProcessor implements PageProcessor {
     /**
      */
     public static void main(String[] args) {
-        String pipelinePath = new ZhihuConfiguration().getFolloweePath();
+        String pipelinePath = new IPProxyConfiguration().getFolloweePath();
         int crawlSize = 100_0000;
         Spider.create(new IPProxyPageProcessor())
                 .setScheduler(//new QueueScheduler()

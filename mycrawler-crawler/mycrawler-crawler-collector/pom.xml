@@ -17,6 +17,10 @@
         
         <dependency>
             <groupId>com.mycrawler</groupId>
+            <artifactId>mycrawler-crawler-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mycrawler</groupId>
             <artifactId>mycrawler-crawler-core</artifactId>
         </dependency>
 
