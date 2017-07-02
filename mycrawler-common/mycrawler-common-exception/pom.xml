@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
         <artifactId>mycrawler-common</artifactId>
-        <groupId>com.github.yrj</groupId>
+        <groupId>com.mycrawler</groupId>
         <version>0.1-SNAPSHOT</version>
   </parent>
   
@@ -18,7 +18,7 @@
 
   <dependencies>
     <dependency>
-        <groupId>com.github.yrj</groupId>
+        <groupId>com.mycrawler</groupId>
         <artifactId>mycrawler-common-utils</artifactId>
     </dependency>
   </dependencies>

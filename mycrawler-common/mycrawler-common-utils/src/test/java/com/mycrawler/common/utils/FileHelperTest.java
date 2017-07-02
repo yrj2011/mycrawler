@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.github.yrj.autotest.base.BaseTest;
+import com.mycrawler.autotest.base.BaseTest;
 
 public class FileHelperTest extends BaseTest{
 	protected static String rootDir;

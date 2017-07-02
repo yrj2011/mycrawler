@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
         <artifactId>mycrawler-autotest</artifactId>
-        <groupId>com.github.yrj</groupId>
+        <groupId>com.mycrawler</groupId>
         <version>0.1-SNAPSHOT</version>
   </parent>
   

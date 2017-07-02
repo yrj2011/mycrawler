@@ -3,7 +3,7 @@
   
   <parent>
         <artifactId>mycrawler-common</artifactId>
-        <groupId>com.github.yrj</groupId>
+        <groupId>com.mycrawler</groupId>
         <version>0.1-SNAPSHOT</version>
   </parent>
   
@@ -18,7 +18,7 @@
   </properties>
   <dependencies>
   	<dependency>
-        <groupId>com.github.yrj</groupId>
+        <groupId>com.mycrawler</groupId>
         <artifactId>mycrawler-autotest-base</artifactId>
     </dependency>
   </dependencies>

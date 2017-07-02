@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.github.yrj</groupId>
+    <groupId>com.mycrawler</groupId>
     <artifactId>mycrawler-service</artifactId>
     <version>0.1-SNAPSHOT</version>
   </parent>
@@ -17,7 +17,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.github.yrj</groupId>
+      <groupId>com.mycrawler</groupId>
       <artifactId>mycrawler-common-domain</artifactId>
     </dependency>
   </dependencies>

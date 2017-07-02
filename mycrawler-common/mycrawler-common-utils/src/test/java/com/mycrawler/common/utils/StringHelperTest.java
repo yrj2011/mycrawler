@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Created by brian on 17/5/9.
+ * Created by yangrenjiang on 17/5/9.
  */
 public class StringHelperTest {
 

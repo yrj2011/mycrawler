@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
- * Created by brian on 16/11/24.
+ * Created by yangrenjiang on 16/11/24.
  *
  * 文件处理的辅助类
  */
