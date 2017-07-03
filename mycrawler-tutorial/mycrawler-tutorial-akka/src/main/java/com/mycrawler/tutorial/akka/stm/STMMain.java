@@ -34,7 +34,7 @@ public class STMMain {
         for(int i = 0 ; i < 23; i ++){
             companyActor.tell(new Coordinated(i, timeout), ActorRef.noSender());
 
-            Thread.sleep(200);
+           // Thread.sleep(200);
 
             int companyCount = (int) Await.result(Patterns.ask(companyActor, "getCount", timeout), timeout.duration());
             int employeeCount = (int) Await.result(Patterns.ask(employeeActor, "getCount", timeout), timeout.duration());

@@ -10,23 +10,30 @@
      <name>mycrawler-tutorial-akka</name>
 
     <dependencies>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-actor_2.12</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-testkit_2.12</artifactId>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
-        <dependency>
+       <dependency>
 		    <groupId>com.typesafe.akka</groupId>
 		   	 <artifactId>akka-agent_2.11</artifactId>
 		    <version>2.5.3</version>
-		</dependency>
+		    <exclusions>
+		    	<exclusion>
+		    		<groupId>org.scala-stm</groupId>
+		    		<artifactId>scala-stm_2.11</artifactId>
+		    		
+		    	</exclusion>
+		    </exclusions>
+		</dependency> 
 		<!-- https://mvnrepository.com/artifact/com.typesafe.akka/akka-transactor_2.10 -->
 		<dependency>
 		    <groupId>com.typesafe.akka</groupId>
