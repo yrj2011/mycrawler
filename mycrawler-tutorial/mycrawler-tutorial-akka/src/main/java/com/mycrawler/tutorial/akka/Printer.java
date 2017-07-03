@@ -1,4 +1,4 @@
-package com.lightbend.akka.sample;
+package com.mycrawler.tutorial.akka;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;

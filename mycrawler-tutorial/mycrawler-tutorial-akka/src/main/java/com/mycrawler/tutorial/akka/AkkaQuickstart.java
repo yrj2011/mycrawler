@@ -1,10 +1,11 @@
-package com.lightbend.akka.sample;
+package com.mycrawler.tutorial.akka;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
-import com.lightbend.akka.sample.Greeter.*;
 
 import java.io.IOException;
+
+import com.mycrawler.tutorial.akka.Greeter.*;
 
 public class AkkaQuickstart {
   public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class AkkaQuickstart {
       //#create-actors
       final ActorRef printerActor = 
         system.actorOf(Printer.props(), "printerActor");
+      
       
       final ActorRef howdyGreeter = 
         system.actorOf(Greeter.props("Howdy", printerActor), "howdyGreeter");

@@ -1,12 +1,12 @@
-package com.lightbend.akka.sample;
+package com.mycrawler.tutorial.akka;
+
+import com.mycrawler.tutorial.akka.Printer.Greeting;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
-
-import com.lightbend.akka.sample.Printer.Greeting;
 
 //#greeter-messages
 public class Greeter extends AbstractActor {
