@@ -1,16 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 	<parent>
 	    <groupId>com.mycrawler</groupId>
 	    <artifactId>mycrawler-tutorial</artifactId>
 	    <version>0.1-SNAPSHOT</version>
-	 </parent>
-    <groupId>mycrawler-tutorial-akka</groupId>
-    <name>mycrawler-tutorial-akka</name>
-<!-- 
+	  </parent>
+    <artifactId>mycrawler-tutorial-akka</artifactId>
+     <name>mycrawler-tutorial-akka</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.12</artifactId>
+            <version>2.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-testkit_2.12</artifactId>
+            <version>2.5.3</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
@@ -36,5 +51,5 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build> -->
+    </build>
 </project>
