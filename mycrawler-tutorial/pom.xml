@@ -17,6 +17,7 @@
   	<module>mycrawler-tutorial-zookeeper</module>
   	<module>mycrawler-tutorial-mongo</module>
 	<module>mycrawler-tutorial-mongo2</module>
+	<module>mycrawler-tutorial-akka</module>
   </modules>
   <dependencies>
 		<dependency>
@@ -73,6 +74,15 @@
 		        <groupId>org.springframework.data</groupId>
 		        <artifactId>spring-data-mongodb</artifactId>
 		 </dependency>
+		  <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.12</artifactId>
+          </dependency>
+          <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-testkit_2.12</artifactId>
+          </dependency>
+      
 		 <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
