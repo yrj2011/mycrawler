@@ -18,6 +18,7 @@
   	<module>mycrawler-tutorial-mongo</module>
 	<module>mycrawler-tutorial-mongo2</module>
 	<module>mycrawler-tutorial-akka</module>
+	<module>mycrawler-tutorial-queue</module>
   </modules>
   <dependencies>
 		<dependency>
