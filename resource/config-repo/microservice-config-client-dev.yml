@@ -1,5 +1,5 @@
 #:wprofile:default add some code
 hello:
-     a: Aad
-     b: Bcd
-     c: Cde
+     a: A
+     b: B
+     c: C
