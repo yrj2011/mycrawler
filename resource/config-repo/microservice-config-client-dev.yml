@@ -1,8 +1,5 @@
-servers:
-  jpushCenter:
-    host: http://127.0.0.1:8050/jpush/send/
-    title: GitHub50-云端钱包测试版
-    destination: GitHub50-ydWalletTestA
-
-apply:
-  message: GitHub50-local message
+#:wprofile:default add some code
+hello:
+     a:A
+     b:B
+     c:C
