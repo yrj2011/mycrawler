@@ -1,5 +1,4 @@
 #:wprofile:default add some code
-hello:
-     a:A
-     b:B
-     c:C
+hello.a=A
+hello.b=B
+hello.c=C
