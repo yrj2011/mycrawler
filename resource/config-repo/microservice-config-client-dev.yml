@@ -5,9 +5,9 @@ hello:
      c: Cdwe42
 servers:
   jpushCenter:
-    host: http://127.0.0.1:8050/jpush/send/
-    title: GitHub50-云端钱包测试版
-    destination: GitHub50-ydWalletTestA
+    host: http://127.0.0.1:8050/jpush/send/send/s
+    title: GitHub50-云端钱包测试版ad
+    destination: GitHub50-ydWalletTestAsdf
 
 apply:
-  message: GitHub50-local message
+  message: GitHub50-local messagedd
