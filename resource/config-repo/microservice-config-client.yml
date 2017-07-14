@@ -1,5 +1,5 @@
 #:wprofile:default add some code
-hello
+hello:
      a:A
      b:B
      c:C
