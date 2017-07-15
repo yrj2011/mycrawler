@@ -23,6 +23,7 @@
 	<module>mycrawler-tutorial-springboot</module>
 	<module>mycrawler-tutorial-rabbitmq</module>
 	<module>mycrawler-tutorial-rabbitmq-boot</module>
+	<module>mycrawler-tutorial-springcloud</module>
 	
   </modules>
   <dependencies>

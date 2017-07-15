@@ -1,0 +1,1 @@
+docker build -t eacdy/test1 . # 格式：docker build -t 标签名称 Dockerfile的相对位置
