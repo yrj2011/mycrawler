@@ -20,6 +20,7 @@
 	<module>mycrawler-tutorial-akka</module>
 	<module>mycrawler-tutorial-queue</module>
 	<module>mycrawler-tutorial-nio</module>
+	<module>mycrawler-tutorial-springboot</module>
   </modules>
   <dependencies>
 		<dependency>

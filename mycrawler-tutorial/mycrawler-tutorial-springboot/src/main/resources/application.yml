@@ -1,0 +1,3 @@
+#:wprofile:default add some code
+serverx:
+  port: 8041
