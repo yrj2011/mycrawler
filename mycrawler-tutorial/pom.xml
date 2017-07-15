@@ -21,6 +21,9 @@
 	<module>mycrawler-tutorial-queue</module>
 	<module>mycrawler-tutorial-nio</module>
 	<module>mycrawler-tutorial-springboot</module>
+	<module>mycrawler-tutorial-rabbitmq</module>
+	<module>mycrawler-tutorial-rabbitmq-boot</module>
+	
   </modules>
   <dependencies>
 		<dependency>
