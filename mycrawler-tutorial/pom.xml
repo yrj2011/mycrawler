@@ -26,6 +26,7 @@
 	<module>mycrawler-tutorial-springcloud</module>
 	<module>spring-data-examples</module>
 	<module>spring-boot-parent</module>
+	<module>mycrawler-tutorial-netty</module>
   </modules>
   <dependencies>
 		<dependency>
