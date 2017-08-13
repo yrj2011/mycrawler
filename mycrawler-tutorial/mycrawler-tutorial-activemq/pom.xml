@@ -18,6 +18,13 @@
 
   <dependencies>
     
+     <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-leveldb-store -->
+	<!-- <dependency>
+	    <groupId>org.apache.activemq</groupId>
+	    <artifactId>activemq-leveldb-store</artifactId>
+	    <version>5.13.0</version>
+	</dependency> -->
+	
     <!-- activemq related -->
 	<dependency>
 		<groupId>org.apache.activemq</groupId>
