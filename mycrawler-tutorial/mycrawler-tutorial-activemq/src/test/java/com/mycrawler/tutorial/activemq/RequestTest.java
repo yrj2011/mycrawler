@@ -22,7 +22,7 @@ public class RequestTest  implements MessageListener{
 	private String connectionUrl = "failover:(tcp://localhost:61616)?"
 			+ "maxReconnectDelay=1000&jms.prefetchPolicy.all=1000&"
 			+ "jms.optimizeAcknowledge=true&jms.useCompression=true";
-	private boolean isPersistent = false;
+	private boolean isPersistent = true;
 	private String  message = "1234567890"+
 								"abcdefghijklmnloprstuvwxyz"+
 								"ABCDEFGHIJKLMNLOPRSTUVWXYZ"+
@@ -54,8 +54,10 @@ public class RequestTest  implements MessageListener{
 //		
 		System.out.println("notifier init !");
 		long start = System.currentTimeMillis();
-		for (int i = 0; i < 10000; i++) {		
-			notifys[i%QUEUENUM].notify(message+System.currentTimeMillis(), String.class.getName());
+		for (int i = 0; i < 10; i++) {		
+			String tmp = message+System.currentTimeMillis();
+			notifys[i%QUEUENUM].notify(tmp, String.class.getName());
+			System.out.println();
 		}
 		System.out.println("waste:"+(System.currentTimeMillis()-start));
 	}
@@ -66,7 +68,7 @@ public class RequestTest  implements MessageListener{
 		requester.init();
 		System.out.println("request init !");
 		long start = System.currentTimeMillis();
-		for (int i = 0; i < 1000000; i++) {
+		for (int i = 0; i < 10; i++) {
 			requester.request(message+System.currentTimeMillis(), String.class.getName());
 		}
 		System.out.println("waste:"+(System.currentTimeMillis()-start));

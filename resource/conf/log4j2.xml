@@ -30,6 +30,10 @@
          <AppenderRef ref="file-log" />
          <AppenderRef ref="Console" />
 	 </Logger>
+	 <Logger name="org.apache.activemq" level="ALL" additivity="false">
+         <AppenderRef ref="Console" />
+	 </Logger>
+	 
   </Loggers>
 </Configuration>
 

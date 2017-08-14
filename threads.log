@@ -1,0 +1,236 @@
+2017-08-13 11:02:03
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.31-b07 mixed mode):
+
+"ActiveMQ BrokerService[localhost] Task-38" #84 daemon prio=5 os_prio=0 tid=0x000000001cf21800 nid=0x3fc waiting on condition [0x0000000026c6f000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000006c54d8b60> (a java.util.concurrent.SynchronousQueue$TransferStack)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1066)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+"JMX server connection timeout 51" #51 daemon prio=5 os_prio=0 tid=0x000000001cf27800 nid=0x3a58 in Object.wait() [0x000000002476f000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at com.sun.jmx.remote.internal.ServerCommunicatorAdmin$Timeout.run(ServerCommunicatorAdmin.java:168)
+	- locked <0x00000007700179f0> (a [I)
+	at java.lang.Thread.run(Thread.java:745)
+
+"RMI TCP Accept-0" #50 daemon prio=5 os_prio=0 tid=0x000000001cf27000 nid=0xf84 runnable [0x000000002456f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	- locked <0x0000000770000428> (a java.net.SocksSocketImpl)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at java.net.ServerSocket.accept(ServerSocket.java:513)
+	at sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:52)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:400)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:372)
+	at java.lang.Thread.run(Thread.java:745)
+
+"RMI TCP Connection(5)-10.0.75.1" #47 daemon prio=5 os_prio=0 tid=0x000000001cf21000 nid=0x3a5c runnable [0x0000000023e6d000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	- locked <0x000000077014d348> (a java.io.BufferedInputStream)
+	at java.io.FilterInputStream.read(FilterInputStream.java:83)
+	at sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:550)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:826)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$240(TCPTransport.java:683)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler$$Lambda$1/2079720902.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:682)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+"ActiveMQ BrokerService.worker.1" #38 daemon prio=5 os_prio=0 tid=0x000000001cf25800 nid=0x20c4 waiting on condition [0x00000000224ce000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000006c54db268> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+"DestroyJavaVM" #30 prio=5 os_prio=0 tid=0x000000001e6fb800 nid=0x5f4 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"ActiveMQ Transport Server: tcp://localhost:61616" #29 daemon prio=9 os_prio=2 tid=0x000000001e6ff000 nid=0x67c runnable [0x0000000020bff000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.DualStackPlainSocketImpl.waitForNewConnection(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:135)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	- locked <0x00000006c55a9758> (a java.net.SocksSocketImpl)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at java.net.ServerSocket.accept(ServerSocket.java:513)
+	at org.apache.activemq.transport.tcp.TcpTransportServer.run(TcpTransportServer.java:299)
+	at java.lang.Thread.run(Thread.java:745)
+
+"ActiveMQ Transport Server Thread Handler: tcp://localhost:61616" #28 daemon prio=8 os_prio=1 tid=0x000000001e6fd000 nid=0x2f54 runnable [0x0000000020aff000]
+   java.lang.Thread.State: RUNNABLE
+	at org.apache.activemq.transport.tcp.TcpTransportServer.handleSocket(TcpTransportServer.java:434)
+	at org.apache.activemq.transport.tcp.TcpTransportServer$1.run(TcpTransportServer.java:375)
+	at java.lang.Thread.run(Thread.java:745)
+
+"ActiveMQ Data File Writer" #26 daemon prio=10 os_prio=2 tid=0x000000001e6fe800 nid=0x33a8 in Object.wait() [0x00000000207ff000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.apache.activemq.store.kahadb.disk.journal.DataFileAppender.processQueue(DataFileAppender.java:298)
+	- locked <0x00000006c55b1a48> (a java.lang.Object)
+	at org.apache.activemq.store.kahadb.disk.journal.DataFileAppender$1.run(DataFileAppender.java:188)
+
+"ActiveMQ Journal Checkpoint Worker" #25 daemon prio=5 os_prio=0 tid=0x000000001e700000 nid=0x908 waiting on condition [0x00000000206ff000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at org.apache.activemq.store.kahadb.MessageDatabase$3.run(MessageDatabase.java:339)
+
+"KahaDB Scheduler" #24 daemon prio=5 os_prio=0 tid=0x000000001e23e000 nid=0x1758 in Object.wait() [0x00000000205ff000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	- locked <0x00000006c55d6918> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:505)
+
+"RMI RenewClean-[10.0.75.1:49314]" #22 daemon prio=5 os_prio=0 tid=0x000000001dd63800 nid=0x2f08 in Object.wait() [0x00000000202ff000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:142)
+	- locked <0x00000006c5801cd0> (a java.lang.ref.ReferenceQueue$Lock)
+	at sun.rmi.transport.DGCClient$EndpointEntry$RenewCleanThread.run(DGCClient.java:536)
+	at java.lang.Thread.run(Thread.java:745)
+
+"RMI Scheduler(0)" #21 daemon prio=5 os_prio=0 tid=0x000000001dd62800 nid=0x39ac waiting on condition [0x00000000201ff000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000006c5614f20> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+"GC Daemon" #19 daemon prio=2 os_prio=-2 tid=0x000000001e64d000 nid=0xfc0 in Object.wait() [0x000000001fdff000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000006c52dd890> (a sun.misc.GC$LatencyLock)
+	at sun.misc.GC$Daemon.run(GC.java:117)
+	- locked <0x00000006c52dd890> (a sun.misc.GC$LatencyLock)
+
+"RMI Reaper" #18 prio=5 os_prio=0 tid=0x000000001ddfb000 nid=0x2458 in Object.wait() [0x000000001fcfe000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000006c55f1278> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:142)
+	- locked <0x00000006c55f1278> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:158)
+	at sun.rmi.transport.ObjectTable$Reaper.run(ObjectTable.java:351)
+	at java.lang.Thread.run(Thread.java:745)
+
+"RMI TCP Accept-0" #17 daemon prio=5 os_prio=0 tid=0x000000001ddfa000 nid=0x162c runnable [0x000000001fbfe000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	- locked <0x00000006c55f1648> (a java.net.SocksSocketImpl)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at java.net.ServerSocket.accept(ServerSocket.java:513)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:400)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:372)
+	at java.lang.Thread.run(Thread.java:745)
+
+"RMI TCP Accept-1099" #15 daemon prio=5 os_prio=0 tid=0x000000001e23d800 nid=0x884 runnable [0x000000001f9ff000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.DualStackPlainSocketImpl.accept0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)
+	- locked <0x00000006c5615078> (a java.net.SocksSocketImpl)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at java.net.ServerSocket.accept(ServerSocket.java:513)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:400)
+	at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:372)
+	at java.lang.Thread.run(Thread.java:745)
+
+"ActiveMQ Broker[localhost] Scheduler" #14 daemon prio=5 os_prio=0 tid=0x000000001e042800 nid=0x2dd0 in Object.wait() [0x000000001f8ff000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	- locked <0x00000006c55a9990> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:505)
+
+"Service Thread" #12 daemon prio=9 os_prio=0 tid=0x000000001bb3e800 nid=0x29b0 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #11 daemon prio=9 os_prio=2 tid=0x000000001bb3c800 nid=0x32ec waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #10 daemon prio=9 os_prio=2 tid=0x000000001bb3b000 nid=0x2db8 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #9 daemon prio=9 os_prio=2 tid=0x000000001bb21800 nid=0x2b98 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"JDWP Command Reader" #8 daemon prio=10 os_prio=0 tid=0x000000001bb16800 nid=0x1290 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"JDWP Event Helper Thread" #7 daemon prio=10 os_prio=0 tid=0x000000001bb13800 nid=0xf70 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"JDWP Transport Listener: dt_socket" #6 daemon prio=10 os_prio=0 tid=0x000000001bb07800 nid=0x2d74 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x000000001baf0000 nid=0x3030 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x000000001bafe800 nid=0x182c runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x00000000026d8800 nid=0x3a30 in Object.wait() [0x000000001ce2f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:142)
+	- locked <0x00000006c54e5f20> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:158)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x00000000026d0000 nid=0x366c in Object.wait() [0x000000001cd2e000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:157)
+	- locked <0x00000006c54e5ef0> (a java.lang.ref.Reference$Lock)
+
+"VM Thread" os_prio=2 tid=0x000000001baa6800 nid=0x2720 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x00000000025fb000 nid=0xb28 runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x00000000025fc800 nid=0x30ac runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x00000000025fe000 nid=0x3604 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x00000000025ff800 nid=0x3268 runnable 
+
+"VM Periodic Task Thread" os_prio=2 tid=0x000000001cee1000 nid=0x140c waiting on condition 
+
+JNI global references: 9510
+
