@@ -60,7 +60,6 @@ public class ActiveMQNotifier implements INotifier{
 			}
 			
 			notify_producer = session.createProducer(notify_destination);
-			//���ý���ʱ���Ϊtrue����ʾʹ�÷�����ʱ����Ϊʱ������������Ա�����Ϊ�ͻ��˺ͷ�����ʱ�䲻ͬ����ɵĶ�������
 			notify_producer.setDisableMessageTimestamp(true);
 			if(is_persistent){
 				notify_producer.setDeliveryMode(DeliveryMode.PERSISTENT);

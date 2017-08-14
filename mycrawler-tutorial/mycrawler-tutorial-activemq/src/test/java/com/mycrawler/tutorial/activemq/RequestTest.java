@@ -54,10 +54,10 @@ public class RequestTest  implements MessageListener{
 //		
 		System.out.println("notifier init !");
 		long start = System.currentTimeMillis();
-		for (int i = 0; i < 10; i++) {		
+		for (int i = 0; i < 1000000; i++) {		
 			String tmp = message+System.currentTimeMillis();
 			notifys[i%QUEUENUM].notify(tmp, String.class.getName());
-			System.out.println();
+			System.out.print("");
 		}
 		System.out.println("waste:"+(System.currentTimeMillis()-start));
 	}
