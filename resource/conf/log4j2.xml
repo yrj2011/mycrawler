@@ -17,7 +17,7 @@
 	</RollingRandomAccessFile>
   </Appenders>
   <Loggers>
-     <Root level="ERROR">
+     <Root level="DEBUG">
          <AppenderRef ref="Console" />
      </Root>
 
@@ -26,11 +26,11 @@
          <AppenderRef ref="file-log" />
 	 </Logger>
 
-     <Logger name="com.mycrawler" level="ERROR" additivity="false">
+     <Logger name="com.mycrawler" level="DEBUG" additivity="false">
          <AppenderRef ref="file-log" />
          <AppenderRef ref="Console" />
 	 </Logger>
-	 <Logger name="org.apache.activemq" level="ALL" additivity="false">
+	 <Logger name="org.apache.activemq" level="DEBUG" additivity="false">
          <AppenderRef ref="Console" />
 	 </Logger>
 	 

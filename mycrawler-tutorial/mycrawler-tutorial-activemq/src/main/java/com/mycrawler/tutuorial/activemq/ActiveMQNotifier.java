@@ -48,6 +48,7 @@ public class ActiveMQNotifier implements INotifier{
 		ActiveMQConnectionFactory connectionFactory = ActiveMQConnectionFactoryFactory.create(notify_queue_name, connection_url);
 		try {
 			//register
+			Thread.currentThread().setName(Thread.currentThread().getName()+" -> " + notify_queue_name);
 			connection = connectionFactory.createConnection();
 			connection.start();
 			
