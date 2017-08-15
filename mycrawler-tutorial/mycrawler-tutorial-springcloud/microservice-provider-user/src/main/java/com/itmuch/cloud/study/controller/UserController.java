@@ -1,10 +1,19 @@
 package com.itmuch.cloud.study.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itmuch.cloud.study.domain.User;
@@ -14,9 +23,10 @@ import com.itmuch.cloud.study.repository.UserRepository;
  * 作用：
  * ① 测试服务实例的相关内容
  * ② 为后来的服务做提供
- * @author eacdy
+ * @author yrj
  */
 @RestController
+@RequestMapping("/user")
 public class UserController {
   @Autowired
   private DiscoveryClient discoveryClient;
@@ -24,18 +34,65 @@ public class UserController {
   private UserRepository userRepository;
 
   /**
-   * 注：@GetMapping("/{id}")是spring 4.3的新注解等价于：
-   * @RequestMapping(value = "/id", method = RequestMethod.GET)
-   * 类似的注解还有@PostMapping等等
+   * 通过id查询用户信息
    * @param id
    * @return user信息
    */
   @GetMapping("/{id}")
-  public User findById(@PathVariable Long id) {
+  public User get(@PathVariable Long id) {
     User findOne = this.userRepository.findOne(id);
     return findOne;
   }
-
+  
+  /**
+   * 查询所有用户信息
+   * @return
+   */
+  @GetMapping() 
+  @ResponseBody
+  public List<User> getUsers() {
+	  User user = new User();
+	  user.setUsername(user.getUsername()+"-add");
+	  User u2 = new User();
+	  List<User> users = new ArrayList<User>();
+	  users.add(u2);
+	  users.add(user);
+      return users;
+  }
+  
+  /**
+   * 添加用户信息
+   * @param user
+   * @return
+   */
+  @PostMapping()
+  public User add(@RequestBody User user) {
+	  user.setUsername(user.getUsername()+"-add");
+      return user;
+  }
+  
+  /**
+   * 通过ID删除用户
+   * @param id
+   * @return
+   */
+  @DeleteMapping(value = "/{id}")
+  public User delete(@PathVariable Long id) {
+	User u2 = new User();
+      return u2;
+  }
+  
+  /**
+   * 根据id修改用户
+   * @param user
+   * @return
+   */
+  @PutMapping(value = "/{id}")
+  public User update(@RequestBody User user) {
+	User u2 = new User();
+      return u2;
+  }
+  
   /**
    * 本地服务实例的信息
    * @return
