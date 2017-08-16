@@ -3,17 +3,22 @@ package com.itmuch.cloud.study.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.itmuch.cloud.study.domain.User;
@@ -39,8 +44,10 @@ public class UserController {
    * @return user信息
    */
   @GetMapping("/{id}")
-  public User get(@PathVariable Long id) {
+  @ResponseStatus(HttpStatus.OK)
+  public User get(@PathVariable Long id,HttpServletResponse resp) {
     User findOne = this.userRepository.findOne(id);
+    resp.setStatus(HttpStatus.ACCEPTED.value());
     return findOne;
   }
   
@@ -83,7 +90,7 @@ public class UserController {
   }
   
   /**
-   * 根据id修改用户
+   * 根据id修改用户所有属性
    * @param user
    * @return
    */
@@ -92,7 +99,17 @@ public class UserController {
 	User u2 = new User();
       return u2;
   }
-  
+ 
+  /**
+   *  根据id修改用户部分属性
+   * @param user
+   * @return
+   */
+  @PatchMapping()
+  public User updatePatch(@RequestBody User user) {
+		User u2 = new User();
+	      return u2;
+ }
   /**
    * 本地服务实例的信息
    * @return
