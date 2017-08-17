@@ -1,0 +1,35 @@
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 2000
+spring:
+  application:
+    name: hystrix
+  boot:
+    admin:
+      routes:
+        endpoints: hystrix.stream
+eureka:
+  instance:
+   metadata-map:
+     cluster: turbine
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  
+---
+spring:
+  profiles: profile1
+server:
+  port: 8080
+---
+spring:
+  profiles: profile2
+server:
+  port: 8083
+---
+spring:
+  profiles: profile3
+server:
+  port: 8086
+#env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,hystrix.stream,turbine.stream

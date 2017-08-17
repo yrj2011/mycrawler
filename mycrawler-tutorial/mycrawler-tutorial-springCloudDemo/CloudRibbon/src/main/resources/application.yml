@@ -1,0 +1,18 @@
+server:
+  port: 8085
+spring:
+  application:
+   name: ribbon
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
+ribbon:
+    MaxAutoRetriesNextServer: 2
+    OkToRetryOnAllOperations: true
+#eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
