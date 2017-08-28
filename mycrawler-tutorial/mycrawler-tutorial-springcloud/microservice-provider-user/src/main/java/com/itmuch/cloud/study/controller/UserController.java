@@ -31,7 +31,7 @@ import com.itmuch.cloud.study.repository.UserRepository;
  * @author yrj
  */
 @RestController
-@RequestMapping("/user")
+//@RequestMapping("/user")
 public class UserController {
   @Autowired
   private DiscoveryClient discoveryClient;
@@ -44,10 +44,9 @@ public class UserController {
    * @return user信息
    */
   @GetMapping("/{id}")
-  @ResponseStatus(HttpStatus.OK)
   public User get(@PathVariable Long id,HttpServletResponse resp) {
     User findOne = this.userRepository.findOne(id);
-    resp.setStatus(HttpStatus.ACCEPTED.value());
+    resp.setStatus(HttpStatus.BAD_REQUEST.value());
     return findOne;
   }
   

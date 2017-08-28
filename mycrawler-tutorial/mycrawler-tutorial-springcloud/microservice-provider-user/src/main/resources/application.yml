@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8800
 spring:
   application:
     name: microservice-provider-user    # 项目名称尽量用小写
@@ -22,6 +22,6 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/    # 指定注册中心的地址
+      defaultZone: http://127.0.0.1:8761/eureka/    # 指定注册中心的地址
   instance:
     preferIpAddress: true

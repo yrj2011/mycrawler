@@ -3,9 +3,27 @@ server:
 spring:
   application:
     name: microservice-consumer-movie-ribbon
+  cloud:
+     loadbalancer:
+        retry:
+           enabled:true
+
+ribbon:
+    MaxAutoRetriesNextServer: 300
+    OkToRetryOnAllOperations: true
+   
+robbin:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+microservice-provider-user:
+  ribbon:
+    MaxAutoRetries: 1000000  # default 0
+    MaxAutoRetriesNextServer: 10 # default 1
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
   instance:
     preferIpAddress: true
+    
+                   

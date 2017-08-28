@@ -6,22 +6,27 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.retry.backoff.FixedBackOffPolicy;
 import org.springframework.retry.policy.SimpleRetryPolicy;
 import org.springframework.retry.support.RetryTemplate;
+import org.springframework.web.client.AsyncRestTemplate;
 
 import feign.RetryableException;
 import feign.Retryer;
 
 @Configuration
 public class MyFeignConfiguration {
-
+	
+	@Bean
+	public AsyncRestTemplate getAsyncRestTemplate() {
+		AsyncRestTemplate a = new AsyncRestTemplate();
+		return a;
+	}
 	@Bean
 	public Retryer getRetryer(@Autowired RetryTemplate retryTemplate){
 		FixedBackOffPolicy fixedBackOffPolicy = new FixedBackOffPolicy();
 		fixedBackOffPolicy.setBackOffPeriod(1000l);
 		retryTemplate.setBackOffPolicy(fixedBackOffPolicy);
-
+		
 		SimpleRetryPolicy retryPolicy = new SimpleRetryPolicy();
-		retryPolicy.setMaxAttempts(30);
-
+		retryPolicy.setMaxAttempts(5);
 		retryTemplate.setRetryPolicy(retryPolicy);
 		return new Retryer(){
 

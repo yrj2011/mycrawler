@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: biz
+server:
+  port: 8080
+eureka:
+  instance: 
+    leaseRenewalIntervalInSeconds: 1  
+    leaseExpirationDurationInSeconds: 2  
+  client:
+    service-url:
+      defaultZone: http://peer1:7761/eureka/,http://peer2:8761/eureka/,http://peer3:9761/eureka/

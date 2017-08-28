@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: consumer
+server:
+  port: 8083
+feign:
+  httpclient:
+    enabled: true
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+#biz:
+ # ribbon:
+  #  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:7761/eureka/,http://peer2:8761/eureka/,http://peer3:9761/eureka/

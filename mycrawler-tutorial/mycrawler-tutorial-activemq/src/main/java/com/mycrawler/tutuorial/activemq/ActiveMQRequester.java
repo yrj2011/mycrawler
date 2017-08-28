@@ -49,10 +49,10 @@ public class ActiveMQRequester implements IRequester{
 			
 			request_destination = session.createQueue(request_queue_name);
 
-			response_destination = session.createTemporaryQueue();
+			response_destination = session.createTemporaryQueue();	
 			
 			request_producer = session.createProducer(request_destination);
-			request_producer.setDisableMessageTimestamp(true);
+			request_producer.setDisableMessageTimestamp(true);		
 			if(is_persistent){
 				request_producer.setDeliveryMode(DeliveryMode.PERSISTENT);
 			}

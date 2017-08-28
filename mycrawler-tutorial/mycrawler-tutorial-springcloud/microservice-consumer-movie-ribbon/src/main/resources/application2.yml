@@ -1,0 +1,25 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: microservice-consumer-movie-ribbon
+  cloud:
+     loadbalancer:
+        retry:
+           enabled:true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    preferIpAddress: true
+    
+microservice-provider-user:
+             ribbon:
+                   ConnectTimeout:250
+                   ReadTimeout:1000
+                   OkToRetryOnAllOperations:true
+                   MaxAutoRetriesNextServer:2
+                   MaxAutoRetries:1
+                   
+                   
