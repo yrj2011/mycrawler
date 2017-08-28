@@ -23,6 +23,17 @@
     <module>microservice-config-server-eureka</module>
     <module>microservice-config-client-eureka</module>
     <module>microservice-api-gateway</module>
+    <module>microservice-admin</module>
+     <module>microservice-polyglot-sidebar</module>
+     <module>microservice-zipkin-client</module>
+     <module>microservice-zipkin-client-backend</module>
+     <module>microservice-zipkin-server</module>
+     <module>microservice-zipkin-stream-client</module>
+     <module>microservice-zipkin-stream-client-backend</module>
+     <module>microservice-zipkin-stream-client-backend-es</module>
+     <module>microservice-zipkin-stream-client-es</module>
+     <module>microservice-zipkin-stream-server</module>
+     <module>microservice-zipkin-stream-server-es</module>
   </modules>
 
   <!-- 使用最新的spring-boot版本 -->
