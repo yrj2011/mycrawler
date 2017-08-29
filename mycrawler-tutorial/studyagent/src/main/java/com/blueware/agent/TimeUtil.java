@@ -12,6 +12,15 @@ public class TimeUtil {
     private TimeUtil() {
     }
 
+    public static void before (String param) {
+        System.out.println("before(" + param + ")");
+    }
+
+    public static void after (String result, String param) {
+        System.out.println("after( result = " + result + " ,param = " + param + ")");
+    }
+
+    
     public static long getStartTime(String key) {
         return startTimes.remove(key);
     }
@@ -27,7 +36,16 @@ public class TimeUtil {
     public static void setEndTime(String key) {
         endTimes.put(key, System.currentTimeMillis());
     }
-
+    
+    public static void test(String className,String method,String opCode,Object[] localVar,Object[] args,Object[] ret) {
+	   System.out.println("asdfadfs");
+   }
+    
+    public static void test2(String className,String method,String opCode,Object[] localVar,Object[] args,Object returns) {
+ 	   System.out.println("asdfadfs");
+   }
+    
+    
     public static void getExclusiveTime(String className, String methodName, String methodDesc) {
         String key = className + methodName + methodDesc;
         long exclusive = getEndTime(key) - getStartTime(key);

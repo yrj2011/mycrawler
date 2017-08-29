@@ -1,0 +1,764 @@
+Dim screenX,screenY
+screenX = GetScreenX()
+screenY = GetScreenY()
+Dim ttkbX,ttkbY,attentionX, attentionY, myAttentionX,myAttentionY,fristPosX, firstPosY,addX,addY,minePosX,minePosY,mineSetPosX,mineSetPosY,logOutX,logOutY,topX,topY, baseAttentionX, baseAttentionY
+ttkbX = 77
+ttkbY = 464
+
+baseAttentionX= 110
+baseAttentionY = 70
+
+myAttentionX = 307
+myAttentionY = 147
+fristPosX = 379
+firstPosY = 511
+addX = 378
+addY = 1113
+minePosX = 33
+minePosY = 78
+mineSetPosX = 427
+mineSetPosY = 1170
+topX = 347
+topY = 59
+
+Dim addAttX = 682,addAttY = 78
+Dim waitingLoopCount, oneWaitTime
+waitingLoopCount = 100
+oneWaitTime = 1000
+readConfigInfo 
+Dim flag
+Dim mbzqCount
+Dim wzryCount
+Dim qemhCount
+Dim wzryswzCount
+Dim ttzxCount
+Dim mnaznCount
+Dim bgrdttCount
+Dim sxznCount
+Dim snsCount
+Dim ssnhCount
+Dim ay123Count
+Dim ymsgCount
+Dim zylqjlCount
+Dim ttdjtCount
+Dim cszlCount
+Dim clickAccountNum
+Dim yzWaitTime
+Dim attPosData
+
+
+attentionX =  baseAttentionX + (attPosData-1)*83
+attentionY = baseAttentionY
+
+Dim baseFile
+Dim accountFilePath = baseFile&"account"&flag&".txt"
+Dim clickAddInfoFilePath = baseFile&"clickAdd"&DateTime.Format("%Y-%m-%d")&".txt"
+Dim errorAccountFilePath = baseFile&"errorAccount"&DateTime.Format("%Y-%m-%d")&".txt"
+Dim yzmFilePath = baseFile&"yzm"&DateTime.Format("%Y-%m-%d")&".txt"
+Dim accountArray = File.ReadLines(accountFilePath)
+Dim mbzq = "-22|1|1A1A1A,-36|8|1A1A1A,-28|13|1A1A1A,-21|20|1A1A1A,-37|18|1A1A1A,26|10|F3FCFF"
+Dim wzry = "44|9|1A1A1A,85|15|1A1A1A,121|17|1A1A1A,150|6|1A1A1A,155|11|1A1A1A,181|10|F3FCFF"
+Dim mnxzx = "-10|9|1A1A1A,-10|13|1A1A1A,9|13|1A1A1A,0|20|1A1A1A,-18|16|1A1A1A,-35|6|1A1A1A,-26|1|1A1A1A,104|10|F3FCFF"
+Dim qemh =  "-6|14|1A1A1A,-3|20|1A1A1A,9|20|1A1A1A,18|12|1A1A1A,27|6|1A1A1A,35|15|1A1A1A,105|10|F3FCFF"
+Dim ttzx = "40|19|1A1A1A,22|9|1A1A1A,16|3|1A1A1A,23|17|1A1A1A,16|15|1A1A1A,102|10|F3FCFF"
+Dim bgrdtt = "2|8|1A1A1A,55|14|1A1A1A,77|12|1A1A1A,82|3|1A1A1A,135|10|F3FCFF"
+Dim sns = "26|16|1A1A1A,-4|17|1A1A1A,4|11|1A1A1A,-9|14|1A1A1A,54|9|1A1A1A,60|7|1A1A1A,80|10|F3FCFF"
+Dim sxzn = "31|16|1A1A1A,34|19|1A1A1A,64|9|1A1A1A,79|8|1A1A1A,86|19|1A1A1A,115|9|F3FCFF"
+Dim mnazn = "23|6|1A1A1A,27|19|1A1A1A,74|13|1A1A1A,-24|14|1A1A1A,106|10|F3FCFF"
+Dim qwkkk = "47|13|1A1A1A,81|19|1A1A1A,82|3|1A1A1A,106|6|1A1A1A,104|19|1A1A1A,132|9|F3FCFF"
+Dim wzryswz = "67|20|1A1A1A,26|16|1A1A1A,101|3|1A1A1A,101|19|1A1A1A,125|5|1A1A1A,156|10|F3FCFF"
+Dim ssnh = "26|5|1A1A1A,53|13|1A1A1A,52|17|1A1A1A,57|20|1A1A1A,80|10|F3FCFF"
+Dim ay123 =  "-8|16|1A1A1A,8|16|1A1A1A,24|7|1A1A1A,45|18|1A1A1A,45|8|1A1A1A,94|10|F3FCFF"
+Dim ymsg = "-33|13|1A1A1A,-29|14|1A1A1A,-31|2|1A1A1A,31|5|1A1A1A,50|6|1A1A1A,77|10|F3FCFF"
+Dim zylqjl = "-77|6|1A1A1A,-84|1|1A1A1A,-57|11|1A1A1A,-11|10|1A1A1A,27|4|1A1A1A,50|12|1A1A1A,73|10|F3FCFF"
+Dim ttdjt = "47|6|1A1A1A,79|7|1A1A1A,103|16|1A1A1A,97|18|1A1A1A,90|20|1A1A1A,124|10|F3FCFF"
+Dim cszl = "10|1|1A1A1A,35|4|1A1A1A,41|10|1A1A1A,82|15|1A1A1A,90|19|1A1A1A,108|10|F3FCFF"
+
+Dim attNameArray = Array()
+attNameArray(0)=Array("曼巴足球",mbzq,mbzqCount,"mbzq")
+attNameArray(1)=Array("王者荣耀钻石解说",wzry,wzryCount,"wzry")
+attNameArray(2)=Array("企鹅漫画",qemh,qemhCount,"qemh")
+attNameArray(3)=Array("王者荣耀上王者",wzryswz,wzryswzCount,"wzryswz")
+attNameArray(4)=Array("体坛咨讯",ttzx,ttzxCount,"ttzx")
+attNameArray(5)=Array("美女爱渣男",mnazn,mnaznCount,"mnazn")
+attNameArray(6)=Array("八卦热点头条",bgrdtt,bgrdttCount,"bgrdtt")
+attNameArray(7)=Array("随心之旅", sxzn,sxznCount,"sxzn")
+attNameArray(8) = Array("尚女神", sns, snsCount, "sns")
+attNameArray(9) = Array("瘦身女皇", ssnh, ssnhCount, "ssnh")
+attNameArray(10) = Array("奥运123", ay123, ay123Count, "ay123")
+attNameArray(11) = Array("研磨时光", ymsg, ymsgCount, "ymsg")
+attNameArray(12) = Array("职业篮球教练",zylqjl,zylqjlCount,"zylqjl")
+attNameArray(13) = Array("体坛大讲堂", ttdjt, ttdjtCount, "ttdjt")
+attNameArray(14) = Array("超神之路",cszl,cszlCount,"cszl")
+
+Dim begSehAttX = 10
+Dim begSehAttY = 172
+Dim endSehAttX = 700
+Dim endSehAttY = 589
+Dim sehMoveX = 180
+Dim sehMoveY = 57
+
+Dim currentAccount
+
+a 
+
+Sub a()
+
+ Dim accountInfo
+ Dim runAccountNum = 0
+ For Each account In accountArray	
+	
+ 	currentAccount = account
+ 	accountInfo = Split(account, "|")
+  	Call info(accountInfo(0) & " " & accountInfo(1))
+
+	Dim clickAttNameArray = Array()
+	For i = 2 To UBOUND(accountInfo)
+		clickAttNameArray(i-2) = accountInfo(i)
+	Next
+	
+
+  	If login(accountInfo(0), accountInfo(1), yzWaitTime, 1000, 10) Then
+
+   		Delay 7000
+   		clickPosition attentionX, attentionY, 3000
+   		
+   		If checkLock() Then 
+   			Call info("log error")
+   			Call File.Append(errorAccountFilePath , DateTime.Format("%Y-%m-%d %H:%M:%S") & " " & currentAccount & "\n")
+   		Else
+   			accountAllOperate(clickAttNameArray)
+   		End If
+   		
+  	Else
+   		Call info("log error")
+   		Call File.Append(errorAccountFilePath , DateTime.Format("%Y-%m-%d %H:%M:%S") & " " & currentAccount & "\n")
+   		back
+   		Delay 2000
+   	End If
+	File.DeleteLine accountFilePath, 1
+	
+	runAccountNum = runAccountNum + 1
+	If (runAccountNum >= clickAccountNum) Then 
+		Exit For
+	End If
+ Next
+End Sub
+
+
+Sub accountAllOperate(clickAttNameArray)
+	If beforeOperat() Then 
+		For Each clickAttName In clickAttNameArray
+		
+			checkMyAtt
+			Dim clickStoreArray()
+			Dim intX,intY			
+			
+			For Each attNameInfo In attNameArray			
+			
+				Dim attName = attNameInfo(0)
+				Dim attNamePos = attNameInfo(1)
+				Dim addClickMaxCount =attNameInfo(2)
+				Dim attNameExt =attNameInfo(3)
+				If attNameExt = clickAttName Then 
+					
+					FindMultiColor begSehAttX, begSehAttY, endSehAttX, endSehAttY, "1A1A1A", attNamePos, 0, 1, intX, intY
+					If intX > 0 Then
+						Call info("找到"&attName)
+						Dim clickCount = oneAccount(2, 10, intX, intY, clickStoreArray, addClickMaxCount,attName)
+						Call File.Append(clickAddInfoFilePath, flag&" "&DateTime.Format("%Y-%m-%d %H:%M:%S") & " 关注号[" & attName & "] 点击量[" & clickCount & "] 点击用户[" & currentAccount & "]\n")
+		
+					Else
+						Call info("未找到" & attName)
+						addAttion (attName)
+						beforeOperat 
+						FindMultiColor begSehAttX, begSehAttY, endSehAttX, endSehAttY, "1A1A1A", attNamePos, 0, 1, intX, intY
+						If intX > 0 Then
+							Call info("找到"&attName)
+							Dim clickCount1 = oneAccount(2, 10, intX, intY, clickStoreArray, addClickMaxCount,attName)
+							Call File.Append(clickAddInfoFilePath, flag & " " & DateTime.Format("%Y-%m-%d %H:%M:%S") & " 关注号[" & attName & "] 点击量[" & clickCount1 & "] 点击用户[" & currentAccount & "]\n")
+						End If					
+					End If
+					
+				End If
+				
+			Next
+			
+		Next
+		KeyPress "Back"
+		Delay 1000
+		logOut
+		Delay 2000
+	Else
+		logOut
+	End If
+
+End Sub
+
+
+Function beforeOperat()
+ clickPosition attentionX, attentionY, 3000
+ If waitPageLoding(304,129,420,161,"999999","-20|1|999999,5|10|999999,24|11|999999,30|6|999999",100,3000) Then
+  clickPosition myAttentionX, myAttentionY, 5000
+  beforeOperat = True
+ Else
+  beforeOperat = False
+ End If
+End Function
+
+
+Function oneAccount(loopCnt, swiCnt, clickX, clickY, clickStoreArray, addClickMaxCount,attName)
+	Dim addClick = 0
+	For loopCnt
+		Delay 2000
+		checkMyAtt
+		clickPosition clickX, clickY, 2000
+  		If waitPageLodingOneColor(105, 348, 172, 381, "5771F9", 100, 1000) Then
+  			Delay 2000
+   			For swiCnt
+   				Call info(currentAccount&" ("&addClick&"  "&addClickMaxCount&")"&attName)
+  				If ifNoResponse() Then
+  					Goto noResponseTag
+  				Else
+  					addClick = doClickAddOperation(fristPosX, firstPosY, addX, addY, clickStoreArray, addClick)
+  					If addClick >= addClickMaxCount Then
+  						back
+  						Goto endOneAttation
+  					End If
+  					Swipe screenX / 2, 703, screenX / 2, 444, 500
+  					Delay 500
+  				End If
+  			Next
+
+   			Delay 1000
+  		End If
+  		back
+
+  		Rem noResponseTag
+ 	Next
+ 	Rem endOneAttation
+ 	oneAccount = addClick
+End Function
+
+Function doClickAddOperation(fristPosX, firstPosY, addX, addY, clickStoreArray, addClick)
+ Call clickPosition(fristPosX, firstPosY, 2000)
+ If waitPageLoding(194, 559, 513, 774, "E0E0DF", "-22|32|E0E0DF,37|35|E0E0DF,-40|46|E0E0DF", 100, 1000) Then
+ 	Delay getReadTime() * 1000
+  	swipeDown
+  	Delay 1500
+  	Dim addIntX, addIntY
+  	FindMultiColor 2, 1110, 169, 1180, "C3773A", "0|2|C3773A,0|1|C3773A", 0, 1, addIntX, addIntY
+  	If addIntY > 0 Then
+  		If UBOUND(clickStoreArray) < 0 Then
+    		addClick = addClick + 1
+    		getStoreColorLocal addIntX, addIntY, clickStoreArray
+    		
+    		clickAdd addIntX, addIntY
+    		
+    		back
+    		Goto overFindAdd
+  		Else
+  			For Each clickStore In clickStoreArray
+  				Dim storeIntX, storeIntY
+  				FindMultiColor 2, 1110, 169, 1180, "C3773A", clickStore, 0, 1, storeIntX, storeIntY
+  				If storeIntX>0 Then
+  					Call info("same")
+  					back
+  					Goto overFindAdd
+  				End If
+  			Next
+  		End If
+
+    	addClick = addClick + 1
+    	getStoreColorLocal addIntX, addIntY, clickStoreArray
+    	
+    	clickAdd addIntX, addIntY
+    	
+    	back
+    	//back
+  	Else
+
+   		back
+  	End If
+
+  	Rem overFindAdd
+ Else
+  	back
+ End If
+ doClickAddOperation = addClick
+End Function
+
+
+Sub clickAdd(addX, addY)
+	Call clickPosition(addX, addY, getReadTime() * 1000)
+	Delay 1000
+	Call clickPosition(topX, topY, 1000)	
+	Call clickPosition(26, 76, 1000)
+End Sub
+
+Sub swipeDown()
+ For 100
+  KeyPress "PageDown"
+ Next
+End Sub
+
+Sub swipeDownWithParm(n)
+ For n
+  KeyPress "PageDown"
+ Next
+End Sub
+
+Sub clickPosition(x, y, delayTime)
+ Tap x, y
+ Delay delayTime
+End Sub
+
+Sub backNewHomePage()
+ Call back()
+ Call back()
+End Sub
+
+Sub logOut()
+ Call clickPosition(minePosX, minePosY, 2000)
+ Call clickPosition(mineSetPosX, mineSetPosY, 2000) 
+ cleanCach
+ Dim logOutX,logOutY
+ FindMultiColor 130,733,680,1000,"0042EB","0|4|0042EB,0|6|0042EB,0|8|0042EB,0|10|0042EB",0,1,logOutX,logOutY
+ Call clickPosition(logOutX, logOutY, 2000)
+ KeyPress "Enter"
+ Delay 100
+ KeyPress "Enter"
+End Sub
+
+
+Function login(user, pass, loopCount, waitTime, afterYZLoopCount)
+ Call clickPosition(minePosX, minePosY, 2500)
+ Call clickPosition(162, 200, 500)
+ InputText user
+ Delay 500
+ For 13
+ 	KeyPress "del"
+ Next
+ Delay 1000
+ InputText user
+ Delay 1000
+ 
+ KeyPress "Tab"
+ Delay 1000
+ InputText pass
+ Delay 2000
+ Dim intX,intY
+ FindMultiColor 19,369,669,513,"FFFFFF","-6|11|FFFFFF,26|12|FFFFFF,-1|22|FFFFFF,33|5|FFFFFF,26|20|FFFFFF",0,1,intX,intY
+
+ If intX > 0 Then
+ 	Call clickPosition (intX,intY,2000)
+ End If
+
+ Dim i=0
+ Dim noYZFlage = 2
+ While i < loopCount
+ 	If fingYanz(20, 57, 93, 95, "333333", "-36|11|333333,-40|1|333333,6|18|333333,-6|16|333333") Then
+
+ 		If fingYanz(121, 478, 273, 526, "2042E9", "50|10|2042E9, 60|10|2042E9") Then 
+
+ 			noYZFlage = 0
+     		PlaySound "/system/media/audio/alarms/Alarm_Beep_03.ogg"
+     	ElseIf noYZFlage = 0 Then
+     		noYZFlage = 1
+     		i = loopCount - afterYZLoopCount
+    	End If
+    	i = i + 1
+    	Delay oneWaitTime
+    	login = False
+ 	Else
+ 		login = True
+ 		Exit While
+ 	End If
+
+ Wend
+
+End Function
+
+
+Function waitPageLoding(x1,y1,x2,y2,color,range,loopCount, waitTime)
+ Dim i=0
+ While i < loopCount
+  If fingYanz(x1,y1,x2,y2,color,range) Then
+   Delay waitTime
+   i = i + 1
+  Else
+   waitPageLoding = True
+   Exit While
+  End If
+ Wend
+ If fingYanz(x1,y1,x2,y2,color,range) Then
+  waitPageLoding = False
+ Else
+  waitPageLoding = True
+ End If
+End Function
+
+Function waitPageLodingOneColor(x1,y1,x2,y2,color,loopCount, waitTime)
+ 	Dim i=0
+ 	While i < loopCount
+  		If fingOneColor(x1, y1, x2, y2, color) Then
+  			waitPageLodingOneColor = True
+   			Exit While
+  		Else
+  			Delay waitTime
+   			i = i + 1
+  		End If
+ 	Wend
+ 	If fingOneColor(x1, y1, x2, y2, color) Then
+ 		waitPageLodingOneColor = True
+ 	Else
+  		waitPageLodingOneColor = False
+ 	End If
+
+End Function
+
+Function fingOneColor(x1,y1,x2,y2, color)
+ Dim intX, intY
+ FindColor x1, y1, x2, y2, color, 0, 1, intX, intY
+ If intX > -1 Then
+  fingOneColor = True
+ Else
+  fingOneColor = False
+ End If
+End Function
+
+Function fingYanz(x1,y1,x2,y2, color, colorRang)
+ Dim intX, intY
+ FindMultiColor x1, y1, x2, y2, color, colorRang, 0, 1, intX, intY
+ If intX > -1 Then
+  fingYanz = True
+ Else
+  fingYanz = False
+ End If
+End Function
+
+
+Sub back()
+ KeyPress "Back"
+ Delay 500
+End Sub
+
+Sub info(内容)
+    TracePrint 内容
+    ShowMessage 内容
+    Delay 1000
+End Sub
+
+Function searchAtt(attName)
+ Dim findXOver = 0
+ Dim intX, intY
+ Dim sehX = begSehAttX,sehY=begSehAttY
+ While (sehY < endSehAttY)
+
+  FindMultiColor sehX, sehY, endSehAttX, endSehAttY, "1A1A1A", attName, 0, 1, intX, intY
+
+  If intX > 0 Then
+   Call info("find" & intX & " " & intY)
+   Call info(sehX&" "&sehY)
+   Exit While
+  Else
+   Call info("no find"&sehX&" "&sehY)
+   If findXOver = 1 Then
+    sehY = sehY + sehMoveY
+    findXOver =0
+   Else
+    If sehX > endSehAttX Then
+     sehX = begSehAttX
+     findXOver = 1
+    Else
+     sehX = sehX + sehMoveX
+    End If
+   End If
+
+  End If
+ Wend
+End Function
+
+Sub getStoreColorLocal(intX, intY, clickStoreArray)
+	Dim startCurrentX = intX+16, currentY = intY, endCurrentX = startCurrentX+14
+
+	Dim colorPos
+	Dim colorArray = Array("9E9E9E","9A9A9A","A0A0A0","9B9B9B","9C9C9C","999999")
+	For i = 0 To 6
+		Dim colorX,colorY
+		Dim currentColor
+		For Each color In colorArray
+			FindColor startCurrentX, currentY, endCurrentX, 1165, color, 3, 1, colorX, colorY
+			If (colorX > 0) Then			 	
+				currentColor = color
+				Exit For
+			End If
+		Next
+
+		If (colorX > 0) Then
+			If i = 6 Then
+				colorPos = colorPos &(colorX-intX)&"|"&(colorY-intY)&"|"&currentColor
+			Else
+				colorPos = colorPos &(colorX-intX)&"|"&(colorY-intY)&"|"&currentColor&","
+			End If
+		End If
+
+		startCurrentX = endCurrentX
+		endCurrentX = endCurrentX + 14
+	Next
+	Dim arrLen = UBound(clickStoreArray)+1
+	clickStoreArray(arrLen) = colorPos
+End Sub
+
+Function ifNoResponse()
+	Dim intX, intY
+	FindMultiColor 219,688, 333,711, "282828", "10|5|282828,20|5|282828,30|5|282828,40|5|282828", 0, 1, intX, intY
+
+	If intX > 0 Then
+		Call info("无响应")
+		Call clickPosition(414, 724, 20000)
+		back
+		Delay 3000
+		back
+		Delay 3000
+		back
+		Delay 3000
+		back
+		Delay 3000
+		back
+		Delay 3000
+
+		beforeOperat
+
+		ifNoResponse = True
+	Else
+		ifNoResponse = False
+	End If
+End Function
+
+
+Sub checkMyAtt()
+
+	If not(fingYanz( 254, 49, 454, 93, "666666", "24|21|666666,40|14|666666,58|11|666666,95|6|666666")) Then
+		back
+		Delay 3000
+		back
+		Delay 3000
+		back
+		Delay 3000
+		back
+		Delay 3000
+		back
+		Delay 3000
+
+		beforeOperat
+
+	End If
+End Sub
+
+
+
+Sub cleanCach()
+	
+	Dim intX,intY
+	FindMultiColor 33, 259, 162, 500, "888888", "7|22|888888,14|22|888888,7|39|888888,21|39|888888,-8|20|888888", 0, 1, intX, intY
+	
+	If intX > 0 Then 
+		Call clickPosition(intX, intY, 2000)
+		Call clickPosition(240,789, 2000)
+	End If
+	
+End Sub
+
+
+Function getReadTime
+	Dim MyValue
+	Randomize  
+	MyValue = Int(((12-5+1) * Rnd()) + 5)   
+	getReadTime = MyValue
+
+End Function
+
+Function checkLock()	
+	
+	back 
+	Delay 2000
+	
+	clickPosition minePosX, minePosY, 2000
+	
+	Dim intX,intY
+	
+	FindColor 15,491,200,549,"333333", 0,1,intX,intY
+		
+	If intX < 0 Then 
+		checkLock = True
+	Else 
+		checkLock = False		
+	End If
+	back 
+	Delay 1000
+End Function
+
+
+Sub checkLock11()
+	
+	clickPosition minePosX, minePosY, 2000
+	
+	Dim intX,intY
+	
+	FindColor 15,491,200,549,"333333", 0,1,intX,intY
+		
+	If intX < 0 Then 
+		checkLock = True
+		info("true")		
+	Else 
+		checkLock = False
+		info("false")		
+	End If
+	back 
+	
+End Sub
+
+Sub addAttion(attName)
+	back 
+	Delay 2500
+	back 
+	Delay 2500
+	
+	Call clickPosition(addAttX, addAttY, 3000)	
+	Call clickPosition(addAttX, addAttY, 3000)
+	Call clickPosition(211, 76, 500)
+	
+	If (attName = "王者荣耀钻石解说" or attName = "王者荣耀上王者") Then 
+		attName="王者荣耀"
+	End If
+	
+	InputText attName	
+	Delay 1000
+	Call clickPosition(addAttX, addAttY, 500)			
+	
+	If waitPageLodingOneColor(566, 132, 697, 617, "3856EB", 30, 1000) Then 
+		
+		Delay 2000
+		
+		Dim intX,intY
+		FindMultiColor 535, 500, 706, 1042, "3856EB", "2|0|3856EB,4|0|3856EB,4|0|3856EB", 0, 1, intX, intY
+		
+		If intX > 0 Then 
+			clickPosition intX, intY, 3000							
+		End If
+		
+		If attName = "超神之路" Then 
+			Dim cszlX,cszlY
+			
+			FindMultiColor 201,572, 386,1158, "1A1A1A","-43|2|1A1A1A,5|15|1A1A1A,23|10|1A1A1A,-2|4|5E5E5E", 0, 1, cszlX, cszlY
+			
+			If cszlX > 0 Then 
+				clickPosition cszlX, cszlY, 3000
+				If waitPageLodingOneColor(105, 348, 172, 381, "5771F9", 100, 1000) Then 
+					Swipe 500, 1000, 500, 600, 1000					
+					Delay 1000
+					Swipe 500, 600, 500, 1000
+					Delay 1000
+					clickPosition 591, 66, 1500
+					clickPosition topX, topY, 1000
+				End If
+				back 
+				Delay 2000
+			End If
+		End If
+		
+		If attName = "美女爱渣男" Then 
+			Dim mnaznX,mnaznY
+			FindMultiColor 130, 789, 386, 1199, "1A1A1A", "-18|6|1A1A1A,41|10|1A1A1A,52|5|1A1A1A,64|3|1A1A1A", 0, 1, mnaznX, mnaznY
+			
+			If mnaznX > 0 Then 
+				clickPosition mnaznX, mnaznY, 3000
+				If waitPageLodingOneColor(105, 348, 172, 381, "5771F9", 100, 1000) Then 
+					Swipe 500, 1000, 500, 600, 1000					
+					Delay 1000
+					Swipe 500, 600, 500, 1000
+					Delay 1000
+					clickPosition 591, 66, 1500
+					clickPosition topX, topY, 1000
+				End If
+				back 
+				Delay 2000
+			End If
+		End If
+		
+		If attName = "尚女神" Then 
+			clickPosition 289, 886, 3000
+			If waitPageLodingOneColor(105, 348, 172, 381, "5771F9", 100, 1000) Then 
+				Swipe 500, 1000, 500, 600, 1000					
+				Delay 1000
+				Swipe 500, 600, 500, 1000
+				Delay 1000
+				clickPosition 591, 66, 1500				
+				clickPosition topX, topY, 1000
+			End If
+			back 
+			Delay 2000
+		End If
+		
+		If attName = "王者荣耀" Then 
+			Dim wzryX,wzryY
+			FindMultiColor 481, 808, 639, 1201, "1A1A1A", "0|6|1A1A1A,5|-29|F0F0F0,12|-54|B1B1B1,29|-59|F0F0F0", 0, 1, wzryX, wzryY
+			If wzryX > 0 Then 
+				wzryY = wzryY-30
+				clickPosition wzryX, wzryY, 3000
+				If waitPageLodingOneColor(609, 127, 707, 268, "3856EB", 30, 1000) Then 
+					Delay 2000
+					If fingOneColor(620,318, 693,354, "3856EB") Then 
+						clickPosition 663, 347, 1000
+					End If
+					
+					clickPosition topX, topY, 1000
+					If fingOneColor(618,415, 692,452, "3856EB") Then 
+						clickPosition 664, 463, 1000
+					End If
+					
+				End If
+				
+				back 
+				Delay 2000
+			End If
+			
+		End If
+		
+		clickPosition 593, 65, 1500
+		
+	End If
+		
+	
+	backNewHomePage 
+	Delay 2000
+	
+End Sub
+
+
+Sub readConfigInfo()
+	
+	 
+	baseFile = ReadUIConfig("baseFilePathData", "/sdcard/Download/")
+	flag = ReadUIConfig("number", 1)
+	
+	clickAccountNum = CInt(ReadUIConfig("clickAccountNum", 5))
+	attPosData = CInt(ReadUIConfig("attPosData", 4))	
+	yzWaitTime = CInt(ReadUIConfig("yzWaitTimeNum", 1200))
+	mbzqCount = CInt(ReadUIConfig("mbzqCount",6))
+    wzryCount = CInt(ReadUIConfig("wzryCount",6))
+    qemhCount = CInt(ReadUIConfig("qemhCount",6))
+    wzryswzCount = CInt(ReadUIConfig("wzryswzCount",6))
+    ttzxCount = CInt(ReadUIConfig("ttzxCount",6))
+    mnaznCount = CInt(ReadUIConfig("mnaznCount", 6))
+    snsCount = CInt(ReadUIConfig("snsCount", 6))
+    bgrdttCount = CInt(ReadUIConfig("bgrdttCount", 6))
+    ay123Count = CInt(ReadUIConfig("ay123Count", 3))
+    ymsgCount = CInt(ReadUIConfig("ymsgCount", 3))
+    zylqjlCount = CInt(ReadUIConfig("zylqjlCount", 3))
+    ttdjtCount = CInt(ReadUIConfig("ttdjtCount", 3))    
+    sxznCount = CInt(ReadUIConfig("sxznCount",3))
+    ssnhCount = CInt(ReadUIConfig("ssnhCount", 3))
+    cszlCount = CInt(ReadUIConfig("cszlCount", 3))
+End Sub
