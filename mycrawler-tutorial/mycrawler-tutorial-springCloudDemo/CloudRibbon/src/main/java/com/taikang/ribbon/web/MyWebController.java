@@ -66,7 +66,7 @@ public class MyWebController {
 	}
 	
 	@RequestMapping("/helloRibbon3")
-	public Object  hello3() throws Exception{
+	public String  hello3() throws Exception{
 		
 		
 	      /*result = retryTemplate.execute(new RetryCallback<ist<TaskDto>,Exception>(){
@@ -87,14 +87,14 @@ public class MyWebController {
 		});*/
 		RestTemplate client = new RestTemplate();
 		
-		WalleResponse result = null ;
-		result = retryTemplate.execute(new RetryCallback<WalleResponse,Exception>(){
+		String result = null ;
+		result = retryTemplate.execute(new RetryCallback<String,Exception>(){
 			@Override
-			public WalleResponse doWithRetry(RetryContext context) throws Exception {
+			public String doWithRetry(RetryContext context) throws Exception {
 				try {
 					
-					ResponseEntity<WalleResponse> forEntity = client.getForEntity("http://localhost:8800/stations/101/tasks",WalleResponse.class);
-					WalleResponse body = forEntity.getBody();
+					ResponseEntity<String> forEntity = client.getForEntity("http://localhost:8800/stations/101/tasks",String.class);
+					String body = forEntity.getBody();
 					return body;
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -103,7 +103,7 @@ public class MyWebController {
 			}
 		});
 		
-		return  result.getResponse();
+		return  result;
 		
 		
 		/*return service.hello();*/

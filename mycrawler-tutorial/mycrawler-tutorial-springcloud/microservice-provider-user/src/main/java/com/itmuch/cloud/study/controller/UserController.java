@@ -20,9 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.itmuch.cloud.study.WalleResponse;
-import com.itmuch.cloud.study.WalleStatus;
-import com.itmuch.cloud.study.domain.TaskDto;
 import com.itmuch.cloud.study.domain.User;
 import com.itmuch.cloud.study.repository.UserRepository;
 
@@ -45,22 +42,22 @@ public class UserController {
    * @param stationID
    * @return task信息
    */
-  @GetMapping("/stations/{stationID}/tasks")
-  public WalleResponse getStationTasks(@PathVariable Long stationID,HttpServletResponse resp) {
+  //@GetMapping("/stations/{stationID}/tasks")
+  /*public WalleResponse getStationTasks(@PathVariable Long stationID,HttpServletResponse resp) {
 	  WalleResponse response = new WalleResponse();
 	  try {
-		 List<TaskDto>  tasks= new ArrayList<>();
-	    /**
+		 List<TaskDTO>  tasks= new ArrayList<>();
+	    *//**
 	     * 
 	     *  业务代码
 	     * 
-	     */
+	     *//*
 	    
 	       if(tasks == null || tasks.size() < 0) {
 	        // 任务不存在
 	    	      response.setStatus(WalleStatus.TASKNOTEXIST);
 	      }else {
-	    	        TaskDto task = new TaskDto();
+	    	        TaskDTO task = new TaskDTO();
 	    	        task.setTaskID(1);
 	    	        task.setState("COMPLETE");
 	    	        tasks.add(task);
@@ -73,7 +70,7 @@ public class UserController {
 		    response.setStatus(WalleStatus.FAIL);
 	   }
       return response;
-  }
+  }*/
   
   /**
    * 通过id查询用户信息
