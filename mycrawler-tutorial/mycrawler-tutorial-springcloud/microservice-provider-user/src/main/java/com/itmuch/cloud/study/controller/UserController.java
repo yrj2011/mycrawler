@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.itmuch.cloud.study.WalleResponse;
+import com.itmuch.cloud.study.WalleStatus;
+import com.itmuch.cloud.study.domain.TaskDto;
 import com.itmuch.cloud.study.domain.User;
 import com.itmuch.cloud.study.repository.UserRepository;
 
@@ -31,7 +33,7 @@ import com.itmuch.cloud.study.repository.UserRepository;
  * @author yrj
  */
 @RestController
-//@RequestMapping("/user")
+@RequestMapping("/user")
 public class UserController {
   @Autowired
   private DiscoveryClient discoveryClient;
@@ -39,14 +41,51 @@ public class UserController {
   private UserRepository userRepository;
 
   /**
+   * 通过stationID查询任务信息
+   * @param stationID
+   * @return task信息
+   */
+  @GetMapping("/stations/{stationID}/tasks")
+  public WalleResponse getStationTasks(@PathVariable Long stationID,HttpServletResponse resp) {
+	  WalleResponse response = new WalleResponse();
+	  try {
+		 List<TaskDto>  tasks= new ArrayList<>();
+	    /**
+	     * 
+	     *  业务代码
+	     * 
+	     */
+	    
+	       if(tasks == null || tasks.size() < 0) {
+	        // 任务不存在
+	    	      response.setStatus(WalleStatus.TASKNOTEXIST);
+	      }else {
+	    	        TaskDto task = new TaskDto();
+	    	        task.setTaskID(1);
+	    	        task.setState("COMPLETE");
+	    	        tasks.add(task);
+	    	        response.setResponse(tasks);  
+	    	 // 请求成功
+	    	        response.setStatus(WalleStatus.SUCCESS);
+	    }
+	   }catch(Exception e) {
+		   // 请求异常
+		    response.setStatus(WalleStatus.FAIL);
+	   }
+      return response;
+  }
+  
+  /**
    * 通过id查询用户信息
    * @param id
    * @return user信息
    */
   @GetMapping("/{id}")
+  @ResponseBody
   public User get(@PathVariable Long id,HttpServletResponse resp) {
     User findOne = this.userRepository.findOne(id);
     resp.setStatus(HttpStatus.BAD_REQUEST.value());
+   
     return findOne;
   }
   

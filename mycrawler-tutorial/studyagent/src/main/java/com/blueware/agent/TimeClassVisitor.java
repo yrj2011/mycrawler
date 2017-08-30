@@ -23,6 +23,7 @@ public class TimeClassVisitor extends ClassVisitor {
 	@Override
 	public MethodVisitor visitMethod(int access, final String name, final String desc, String signature,
 			String[] exceptions) {
+		Type.getType("LC");
 		MethodVisitor mv = cv.visitMethod(access, name, desc, signature, exceptions);
 		if (annotationDesc != null && annotationDesc.equals(Type.getDescriptor(ExclusiveTime.class))) {
 			final String key = className + name + desc;
@@ -43,6 +44,8 @@ public class TimeClassVisitor extends ClassVisitor {
 					// 方法退出时获取结束时间并计算执行时间
 					@Override
 					public void onMethodExit(int opcode) {
+						this.visitMethodInsn(Opcodes.INVOKESTATIC, "com/blueware/agent/TimeUtil", "getInvokeStack",
+								"()V", false);
 						/*// 相当于com.blueware.agent.TimeUtil.setEndTime("key");
 						this.visitLdcInsn(key);
 						this.visitMethodInsn(Opcodes.INVOKESTATIC, "com/blueware/agent/TimeUtil", "setEndTime",
@@ -78,7 +81,8 @@ public class TimeClassVisitor extends ClassVisitor {
 						 } else {  
 						      visitInsn(ACONST_NULL); //为了占用一个栈位置。  
 						 }  
-						 loadRetruns();
+						    visitInsn(ACONST_NULL); //为了占用一个栈位置。
+						//loadRetruns();
 					    	 visitMethodInsn(Opcodes.INVOKESTATIC, "com/blueware/agent/TimeUtil","test",   
 									 "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)V");  
 					}

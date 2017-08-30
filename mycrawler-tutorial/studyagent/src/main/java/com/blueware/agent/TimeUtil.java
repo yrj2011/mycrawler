@@ -28,7 +28,16 @@ public class TimeUtil {
     public static void setStartTime(String key) {
         startTimes.put(key, System.currentTimeMillis());
     }
-
+    public static void getInvokeStack(){  
+    	 Throwable t = new Throwable();  
+    	 StackTraceElement ste[] = t.getStackTrace();  
+    	 StringBuilder sb = new StringBuilder();  
+    	 for (int i = 1; i < ste.length; i++)  
+    	 {  
+    	  sb.append(ste[i].toString()).append(";");   
+    	 }
+    	 System.out.println(sb.toString());
+   }
     public static long getEndTime(String key) {
         return endTimes.remove(key);
     }

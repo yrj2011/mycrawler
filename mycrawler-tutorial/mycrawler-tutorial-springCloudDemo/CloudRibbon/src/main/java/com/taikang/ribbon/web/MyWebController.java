@@ -1,5 +1,7 @@
 package com.taikang.ribbon.web;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,14 +66,35 @@ public class MyWebController {
 	}
 	
 	@RequestMapping("/helloRibbon3")
-	public String hello3() throws Exception{
-		log.info("you called me");
-		String result = retryTemplate.execute(new RetryCallback<String,Exception>(){
+	public Object  hello3() throws Exception{
+		
+		
+	      /*result = retryTemplate.execute(new RetryCallback<ist<TaskDto>,Exception>(){
 			@Override
-			public String doWithRetry(RetryContext context) throws Exception {
+			public List<TaskDto>  doWithRetry(RetryContext context) throws Exception {
 				try {
-					ResponseEntity<String> forEntity = client.getForEntity("http://hystrix/helloSpringBoot", String.class);
-					String body = forEntity.getBody();
+					ResponseEntity<ist<TaskDto>> forEntity = client.getForEntity("http://localhost:8000/station/101/tasks", List<TaskDto>.class);
+					
+					ResponseEntity<ist<TaskDto>> forEntity = client.getf("http://localhost:8000/station/101/tasks", List<TaskDto>.class);
+					
+					List<TaskDto> body = forEntity.getBody();
+					return body;
+				} catch (Exception e) {
+					e.printStackTrace();
+					throw e;
+				}
+			}
+		});*/
+		RestTemplate client = new RestTemplate();
+		
+		WalleResponse result = null ;
+		result = retryTemplate.execute(new RetryCallback<WalleResponse,Exception>(){
+			@Override
+			public WalleResponse doWithRetry(RetryContext context) throws Exception {
+				try {
+					
+					ResponseEntity<WalleResponse> forEntity = client.getForEntity("http://localhost:8800/stations/101/tasks",WalleResponse.class);
+					WalleResponse body = forEntity.getBody();
 					return body;
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -79,7 +102,10 @@ public class MyWebController {
 				}
 			}
 		});
-		return result;
+		
+		return  result.getResponse();
+		
+		
 		/*return service.hello();*/
 	}
 	
@@ -103,7 +129,7 @@ public class MyWebController {
 			@Override
 			public String doWithRetry(RetryContext context) throws Exception {
 				
-				   ListenableFuture<ResponseEntity<String>> future = asyncClient.getForEntity("http://localhost:8000/1", String.class);  
+				   ListenableFuture<ResponseEntity<String>> future = asyncClient.getForEntity("http://localhost:8000/station/101/tasks", String.class);  
 				   future.addCallback(callback); 
 				  return "OK";
 			}
